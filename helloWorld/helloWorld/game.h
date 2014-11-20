@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 
-#ifndef helloWorld_Header_h
-#define helloWorld_Header_h
+#ifndef hangman_game_h
+#define hangman_game_h
 
 
 using namespace std;
@@ -35,9 +35,8 @@ public:
     void setName(string _name){
         name = _name;
     }
-    
-    
 };
+
 
 
 #endif

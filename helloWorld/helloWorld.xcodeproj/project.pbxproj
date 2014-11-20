@@ -25,7 +25,8 @@
 /* Begin PBXFileReference section */
 		6AE2365C1A1BF000003D47FD /* helloWorld */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = helloWorld; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE2365F1A1BF000003D47FD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		6AE236791A1DC830003D47FD /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		6AE236791A1DC830003D47FD /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		6AE2367A1A1E8AF1003D47FD /* player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +43,7 @@
 		6AE236531A1BF000003D47FD = {
 			isa = PBXGroup;
 			children = (
-				6AE2365E1A1BF000003D47FD /* helloWorld */,
+				6AE2365E1A1BF000003D47FD /* hangman */,
 				6AE2365D1A1BF000003D47FD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,12 +56,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6AE2365E1A1BF000003D47FD /* helloWorld */ = {
+		6AE2365E1A1BF000003D47FD /* hangman */ = {
 			isa = PBXGroup;
 			children = (
 				6AE2365F1A1BF000003D47FD /* main.cpp */,
-				6AE236791A1DC830003D47FD /* Header.h */,
+				6AE236791A1DC830003D47FD /* game.h */,
+				6AE2367A1A1E8AF1003D47FD /* player.h */,
 			);
+			name = hangman;
 			path = helloWorld;
 			sourceTree = "<group>";
 		};
