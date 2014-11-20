@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6AE236601A1BF000003D47FD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2365F1A1BF000003D47FD /* main.cpp */; };
 		6AE2367C1A1E93F1003D47FD /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2367B1A1E93F1003D47FD /* player.cpp */; };
+		6AE2367E1A1E950B003D47FD /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2367D1A1E950B003D47FD /* game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		6AE236791A1DC830003D47FD /* player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
 		6AE2367A1A1E8AF1003D47FD /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		6AE2367B1A1E93F1003D47FD /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
+		6AE2367D1A1E950B003D47FD /* game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				6AE236791A1DC830003D47FD /* player.h */,
 				6AE2367A1A1E8AF1003D47FD /* game.h */,
 				6AE2367B1A1E93F1003D47FD /* player.cpp */,
+				6AE2367D1A1E950B003D47FD /* game.cpp */,
 			);
 			name = hangman;
 			path = helloWorld;
@@ -128,6 +131,7 @@
 			files = (
 				6AE2367C1A1E93F1003D47FD /* player.cpp in Sources */,
 				6AE236601A1BF000003D47FD /* main.cpp in Sources */,
+				6AE2367E1A1E950B003D47FD /* game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
