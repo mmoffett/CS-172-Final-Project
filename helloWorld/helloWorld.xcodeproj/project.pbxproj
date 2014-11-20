@@ -31,6 +31,7 @@
 		6AE2367A1A1E8AF1003D47FD /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		6AE2367B1A1E93F1003D47FD /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
 		6AE2367D1A1E950B003D47FD /* game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
+		6AE2367F1A1E974E003D47FD /* Christmas.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Christmas.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 				6AE2367A1A1E8AF1003D47FD /* game.h */,
 				6AE2367B1A1E93F1003D47FD /* player.cpp */,
 				6AE2367D1A1E950B003D47FD /* game.cpp */,
+				6AE2367F1A1E974E003D47FD /* Christmas.rtf */,
 			);
 			name = hangman;
 			path = helloWorld;

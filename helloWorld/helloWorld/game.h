@@ -5,6 +5,7 @@
 #ifndef hangman_game_h
 #define hangman_game_h
 #include "player.h"
+#include "Christmas.rtf"
 
 using namespace std;
 
