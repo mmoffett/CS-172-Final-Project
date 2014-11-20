@@ -15,7 +15,8 @@ bool game::checkWord()
 }
 void game::guessLetter()
 {
-    
+    // "Christmas dinner is basically Thanksgiving dinner with ham.
+    // except sometimes it's not actually on Christmas" -- Marissa.
 }
 bool game::checkLetter()
 {
