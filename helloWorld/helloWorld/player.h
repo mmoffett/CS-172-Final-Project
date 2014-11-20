@@ -1,27 +1,31 @@
+
 #include <iostream>
 #include <string>
 
 #ifndef hangman_player_h
 #define hangman_player_h
 
-class player{
+
+using namespace std;
+
+
+class player
+{
 private:
-    string word;
-    vector <player> players;
-    int guesses;
+    string name;
+    int wins;
+    int losses;
+    int timesPlayed;
     
 public:
-    void makeTurn();
-    void guessWord();
-    bool checkWord();
-    void guessLetter();
-    bool checkLetter();
-    void chooseCategory();
-    void openFile();
-    void updatePlayers();
-    void saveScores();
-    
-    
+    string getName();
+    int getWins();
+    int getLosses();
+    double getAverage();
+    int getTimesPlayed();
+    void setName(string _name);
 };
+
+
 
 #endif
