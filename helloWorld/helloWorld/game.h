@@ -18,7 +18,7 @@ private:
 public:
     void makeTurn();
     void guessWord();
-    bool checkWord();
+    bool checkWord(string guessword);
     void guessLetter();
     bool checkLetter();
     void chooseCategory();

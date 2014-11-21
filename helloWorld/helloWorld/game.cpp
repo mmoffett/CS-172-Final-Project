@@ -7,16 +7,19 @@ void game::makeTurn()
 }
 void game::guessWord()
 {
-    
+    string guessword;
+    getline(cin, word);
 }
-bool game::checkWord()
+bool game::checkWord(string guessword)
 {
-    return true; // THIS ISN'T ACTUALLY THE THING.
+    string gameword; // We need to input here the active word of the game
+    if (gameword == guessword)
+        return true;
+    else return false;
 }
 void game::guessLetter()
 {
-    // "Christmas dinner is basically Thanksgiving dinner with ham.
-    // except sometimes it's not actually on Christmas" -- Marissa.
+    
 }
 bool game::checkLetter()
 {
