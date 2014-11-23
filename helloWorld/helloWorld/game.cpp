@@ -10,6 +10,7 @@ string game::guessWord()
     string guessword;
     getline(cin, guessword);
     return guessword;
+	// hi
 }
 bool game::checkWord(string guessword)
 {
