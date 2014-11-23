@@ -22,7 +22,7 @@ public:
     bool checkWord(string guessword);
     char guessLetter();
     void checkLetter(string word, char guessletter);
-    void chooseCategory();
+    char chooseCategory();
     void openFile();
     void updatePlayers();
     void saveScores();
