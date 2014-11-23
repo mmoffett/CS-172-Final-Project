@@ -14,6 +14,7 @@ private:
     string word;
     vector <player> players;
     int guesses;
+	string found;
     
 public:
     void makeTurn();
@@ -25,6 +26,7 @@ public:
     void openFile();
     void updatePlayers();
     void saveScores();
+	void findLetterPos(string word, string found);
     
     
 };

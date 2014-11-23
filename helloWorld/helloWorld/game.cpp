@@ -53,3 +53,7 @@ void game::saveScores()
 {
     
 }
+void game::findLetterPos(string word, string found)
+{
+
+}
