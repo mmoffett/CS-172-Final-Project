@@ -55,5 +55,11 @@ void game::saveScores()
 }
 void game::findLetterPos(string word, string found, char guessletter)
 {
-
+	for (int i = 0; i < word.length())
+	{
+		if (word.at(i) == guessletter)
+		{
+			found.at(i) = guessletter;
+		}
+	}
 }
