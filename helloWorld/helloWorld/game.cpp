@@ -5,10 +5,11 @@ void game::makeTurn()
 {
     //stuff
 }
-void game::guessWord()
+string game::guessWord()
 {
     string guessword;
-    getline(cin, word);
+    getline(cin, guessword);
+    return guessword;
 }
 bool game::checkWord(string guessword)
 {
@@ -17,13 +18,20 @@ bool game::checkWord(string guessword)
         return true;
     else return false;
 }
-void game::guessLetter()
+char game::guessLetter()
 {
+    char guessletter;
+    cin >> guessletter;
+    return guessletter;
     
 }
-bool game::checkLetter()
+bool game::checkLetter(string word, char guessletter)
 {
-    return true; //FIX THIS
+    int found = word.find(guessletter);
+    if (found > 0)
+        return true;
+    return false;
+    // This only checks IF the letter is in the word. We're going to need something to return the locations of all instances of that particular letter, and then outputs to the user where that letter is in the word. We can write another function to do so, and then call it from this function, I think, as that would make it so we don't have to run that function if the letter isn't in the word at all.
 }
 void game::chooseCategory()
 {

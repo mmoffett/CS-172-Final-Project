@@ -17,10 +17,10 @@ private:
     
 public:
     void makeTurn();
-    void guessWord();
+    string guessWord();
     bool checkWord(string guessword);
-    void guessLetter();
-    bool checkLetter();
+    char guessLetter();
+    bool checkLetter(string word, char guessletter);
     void chooseCategory();
     void openFile();
     void updatePlayers();
