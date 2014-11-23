@@ -26,12 +26,12 @@ char game::guessLetter()
     return guessletter;
     
 }
-bool game::checkLetter(string word, char guessletter)
+void game::checkLetter(string word, char guessletter)
 {
-    int found = word.find(guessletter);
-    if (found > 0)
-        return true;
-    return false;
+	if (word.find(guessLetter) != -1)
+	{
+		findLetterPos(word,found,guessLetter)
+	}
     // This only checks IF the letter is in the word. We're going to need something to return the locations of all instances of that particular letter, and then outputs to the user where that letter is in the word. We can write another function to do so, and then call it from this function, I think, as that would make it so we don't have to run that function if the letter isn't in the word at all.
 }
 void game::chooseCategory()
@@ -53,7 +53,7 @@ void game::saveScores()
 {
     
 }
-void game::findLetterPos(string word, string found)
+void game::findLetterPos(string word, string found, char guessletter)
 {
 
 }

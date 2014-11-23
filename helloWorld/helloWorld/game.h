@@ -21,7 +21,7 @@ public:
     string guessWord();
     bool checkWord(string guessword);
     char guessLetter();
-    bool checkLetter(string word, char guessletter);
+    void checkLetter(string word, char guessletter);
     void chooseCategory();
     void openFile();
     void updatePlayers();
