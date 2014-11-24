@@ -17,9 +17,9 @@ private:
 	string found;
     
 public:
-    void makeTurn();
+    void makeTurn(player activePlayer, string activeWord);
     string guessWord();
-    bool checkWord(string guessword);
+    bool checkWord(string guessword, string gameword);
     char guessLetter();
     void checkLetter(string word, char guessletter);
     char chooseCategory();
