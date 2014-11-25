@@ -29,7 +29,7 @@ int main(){
     std::cout << "Current Path: " << path << std::endl;
     // ----------------------------------------------------------------------------
     
-	game test = new game()
+	game test = new game();
 
 	cout << "How many players are there? " << endl;
 	int numPlayers;
@@ -40,8 +40,10 @@ int main(){
 		cout << "Enter player name" << endl;
 		string name;
 		cin >> name;
-		//do somthing to access file and then make a player called newP
-		test.addPlayer(newP)
+		//if file exists with this player, read it and make player
+		//else make new file and make player
+		player newP = new player(name);
+		test.addPlayer(newP);//newP will be filled with diff contents
 	}
 
     // TO DO LIST:
@@ -51,7 +53,7 @@ int main(){
     // Create or access that many players
         // Create vector; access or create each player file
     
-    // Create game
+    // Create game//done
     // Run game
         // How are we going to rotate turns?
         // Track how many tries are left
