@@ -59,11 +59,31 @@ void game::openFile()
 }
 void game::updatePlayers()
 {
-    
+	
 }
 void game::saveScores()
 {
-    
+	for (int i = 0; i < players.size(); i++)
+	{
+		Player temp = players.at(i);
+		string filename = temp.getName();
+		filename += ".txt";
+		fout.open(filename);
+		if (fout.fail())
+		{
+			cout << "can't open file" << endl;
+			return 0;
+		}
+		fout << "Player Name: "temp.getName();
+		fout << "Newest Data: " << endl;
+		fout << "Wins: " << temp.getWins() << endl;
+		fout << "Losses: " << temp.getLosses() << endl;
+		fout << "Times Played: " << temp.getTimesPlayed() << endl;
+		fout << "Average: " << temp.getAverage() << endl;
+
+			fout.close();
+
+	}
 }
 void game::findLetterPos(string word, string found, char guessLetter)
 {
@@ -77,5 +97,5 @@ void game::findLetterPos(string word, string found, char guessLetter)
 }
 void game::chooseWord()
 {
-
+	
 }
