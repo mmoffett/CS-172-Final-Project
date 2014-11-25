@@ -59,6 +59,11 @@ void game::openFile()
 }
 void game::updatePlayers()
 {
+	for (int i = 0; i < players.size(); i++)
+	{
+		Player temp = players.at(i);
+		temp.upTimesPlayed();
+		//if won up wins, if lost, up losses
 }
 void game::saveScores()
 {
