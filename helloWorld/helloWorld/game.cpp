@@ -71,11 +71,12 @@ void game::updatePlayers()
 		player temp = players.at(i);
 		temp.upTimesPlayed();
 		//if won up wins, if lost, up losses
+    }
 }
 
 void game::findLetterPos(string word, string found, char guessLetter)
 {
-    for (int i = 0; i < word.length())
+    for (int i = 0; i < word.length();i++)
 	{
 		if (word.at(i) == guessLetter)
 		{
@@ -89,19 +90,19 @@ void game::chooseWord()
 	//goes through file and picks one word randomly
 }
     void game::saveScores()
-    {
+{
         for (int i = 0; i < players.size(); i++)
         {
-            Player temp = players.at(i);
+            player temp = players.at(i);
             string filename = temp.getName();
             filename += ".txt";
             fout.open(filename);
             if (fout.fail())
             {
                 cout << "can't open file" << endl;
-                return 0;
+                return;
             }
-            fout << "Player Name: "temp.getName();
+            fout << "Player Name: " << temp.getName();
             fout << "Newest Data: " << endl;
             fout << "Wins: " << temp.getWins() << endl;
             fout << "Losses: " << temp.getLosses() << endl;
@@ -109,4 +110,4 @@ void game::chooseWord()
             fout << "Average: " << temp.getAverage() << endl;
             fout.close();
         }
-    }
+}
