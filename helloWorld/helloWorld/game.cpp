@@ -66,3 +66,7 @@ void game::findLetterPos(string word, string found, char guessLetter)
 		}
 	}
 }
+void game::chooseWord()
+{
+
+}

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 
@@ -20,6 +21,7 @@ public:
     void makeTurn();
     string guessWord();
     bool checkWord(string guessword);
+	void chooseWord();
     char guessLetter();
     void checkLetter(string word, char guessletter);
     char chooseCategory();
