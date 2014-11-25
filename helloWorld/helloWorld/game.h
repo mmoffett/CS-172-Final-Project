@@ -31,8 +31,7 @@ public:
     void openFile();
     void updatePlayers();
     void saveScores();
-	void findLetterPos(string word, string found);
-	void chooseWord();
+	void findLetterPos(string word, string found, char guessletter);
     
     
 };

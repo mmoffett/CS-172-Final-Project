@@ -26,7 +26,7 @@ public:
     void setName(string _name);
 	void upWins();
 	void upLosses();
-	void upTimeesPlayed();
+	void upTimesPlayed();
 };
 
 

@@ -8,7 +8,8 @@ void game::makeTurn(player activePlayer, string activeWord)
 	cin >> k;
 	if (k == 'y')
 		guessWord();
-	checkLetter(guessLetter(), word);
+    char g=guessLetter();
+	checkLetter(word, g);
 	cout << _found;
     // If player would like to guess the word, call the guessWord and checkWord functions
     // If not, call the guessLetter and checkLetter functions
@@ -28,15 +29,16 @@ bool game::checkWord(string guessword, string gameword)
 }
 char game::guessLetter()
 {
+    cout << "enter a letter: ";
     char guessletter;
     cin >> guessletter;
     return guessletter;  
 }
 void game::checkLetter(string word, char guessletter)
 {
-	if (word.find(guessLetter) != -1)
+	if (word.find(guessletter) != -1)
 	{
-		findLetterPos(word,found,guessLetter)
+        findLetterPos(word, _found, guessletter);
 	}
     // This only checks IF the letter is in the word. We're going to need something to return the locations
     // of all instances of that particular letter, and then outputs to the user where that letter is in the word.
@@ -55,46 +57,25 @@ void game::openFile()
 	char category = chooseCategory();
 	string fileName;
 	//if char is 1, file is___, etc
-	fin.open(filename);
+	fin.open("Christmas.rtf"); //file name needs to be set
 	if (!fin)
 	{
 		cout << "can't open file" << endl;
-		return 0;
+        return;
 	}
 }
 void game::updatePlayers()
 {
 	for (int i = 0; i < players.size(); i++)
 	{
-		Player temp = players.at(i);
+		player temp = players.at(i);
 		temp.upTimesPlayed();
 		//if won up wins, if lost, up losses
 }
-void game::saveScores()
-{
-	for (int i = 0; i < players.size(); i++)
-	{
-		Player temp = players.at(i);
-		string filename = temp.getName();
-		filename += ".txt";
-		fout.open(filename);
-		if (fout.fail())
-		{
-			cout << "can't open file" << endl;
-			return 0;
-		}
-		fout << "Player Name: "temp.getName();
-		fout << "Newest Data: " << endl;
-		fout << "Wins: " << temp.getWins() << endl;
-		fout << "Losses: " << temp.getLosses() << endl;
-		fout << "Times Played: " << temp.getTimesPlayed() << endl;
-		fout << "Average: " << temp.getAverage() << endl;
-		fout.close();
-	}
-}
+
 void game::findLetterPos(string word, string found, char guessLetter)
 {
-	for (int i = 0; i < word.length())
+    for (int i = 0; i < word.length())
 	{
 		if (word.at(i) == guessLetter)
 		{
@@ -107,3 +88,25 @@ void game::chooseWord()
 {
 	//goes through file and picks one word randomly
 }
+    void game::saveScores()
+    {
+        for (int i = 0; i < players.size(); i++)
+        {
+            Player temp = players.at(i);
+            string filename = temp.getName();
+            filename += ".txt";
+            fout.open(filename);
+            if (fout.fail())
+            {
+                cout << "can't open file" << endl;
+                return 0;
+            }
+            fout << "Player Name: "temp.getName();
+            fout << "Newest Data: " << endl;
+            fout << "Wins: " << temp.getWins() << endl;
+            fout << "Losses: " << temp.getLosses() << endl;
+            fout << "Times Played: " << temp.getTimesPlayed() << endl;
+            fout << "Average: " << temp.getAverage() << endl;
+            fout.close();
+        }
+    }
