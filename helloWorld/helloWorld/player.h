@@ -24,6 +24,9 @@ public:
     double getAverage();
     int getTimesPlayed();
     void setName(string _name);
+	void upWins();
+	void upLosses();
+	void upTimeesPlayed();
 };
 
 

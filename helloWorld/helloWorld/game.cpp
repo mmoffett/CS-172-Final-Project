@@ -59,7 +59,6 @@ void game::openFile()
 }
 void game::updatePlayers()
 {
-	
 }
 void game::saveScores()
 {
