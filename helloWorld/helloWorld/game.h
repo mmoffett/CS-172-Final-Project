@@ -18,10 +18,11 @@ private:
 	string found;
     
 public:
-    void makeTurn();
+    void makeTurn(player activePlayer, string activeWord);
     string guessWord();
     bool checkWord(string guessword);
 	void chooseWord();
+    bool checkWord(string guessword, string gameword);
     char guessLetter();
     void checkLetter(string word, char guessletter);
     char chooseCategory();
@@ -29,6 +30,7 @@ public:
     void updatePlayers();
     void saveScores();
 	void findLetterPos(string word, string found);
+	void chooseWord();
     
     
 };

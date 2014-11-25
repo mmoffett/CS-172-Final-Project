@@ -1,20 +1,21 @@
 #include "game.h"
 
 
-void game::makeTurn()
+void game::makeTurn(player activePlayer, string activeWord)
 {
-    //stuff
+    // Ask if player would like to guess the word
+    // If player would like to guess the word, call the guessWord and checkWord functions
+    // If not, call the guessLetter and checkLetter functions
+    // return (?) info on how game is progressing (e.g., what letters have been guessed correctly)
 }
 string game::guessWord()
 {
     string guessword;
     getline(cin, guessword);
     return guessword;
-	// hi
 }
-bool game::checkWord(string guessword)
+bool game::checkWord(string guessword, string gameword)
 {
-    string gameword; // We need to input here the active word of the game
     if (gameword == guessword)
         return true;
     else return false;
@@ -32,7 +33,10 @@ void game::checkLetter(string word, char guessletter)
 	{
 		findLetterPos(word,found,guessLetter)
 	}
-    // This only checks IF the letter is in the word. We're going to need something to return the locations of all instances of that particular letter, and then outputs to the user where that letter is in the word. We can write another function to do so, and then call it from this function, I think, as that would make it so we don't have to run that function if the letter isn't in the word at all.
+    // This only checks IF the letter is in the word. We're going to need something to return the locations
+    // of all instances of that particular letter, and then outputs to the user where that letter is in the word.
+    // We can write another function to do so, and then call it from this function, I think, as that would make
+    // it so we don't have to run that function if the letter isn't in the word at all.
 }
 char game::chooseCategory()
 {
