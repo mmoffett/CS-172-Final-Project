@@ -16,6 +16,8 @@ private:
     vector <player> players;
     int guesses;
 	string found;
+	ifstream fin;
+	ofstream fout;
     
 public:
     void makeTurn(player activePlayer, string activeWord);

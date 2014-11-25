@@ -50,7 +50,12 @@ void game::openFile()
 	char category = chooseCategory();
 	string fileName;
 	//if char is 1, file is___, etc
-	//open file
+	fin.open(filename);
+	if (!fin)
+	{
+		cout << "can't open file" << endl;
+		return 0;
+	}
 }
 void game::updatePlayers()
 {
