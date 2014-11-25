@@ -10,7 +10,8 @@
 
 using namespace std;
 
-class game{
+class game
+{
 private:
     string word;
     vector <player> players;
@@ -32,7 +33,7 @@ public:
     void updatePlayers();
     void saveScores();
 	void findLetterPos(string word, string found, char guessletter);
-    
+	void addPlayer(player p);
     
 };
 

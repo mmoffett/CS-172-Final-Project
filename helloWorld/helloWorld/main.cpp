@@ -29,10 +29,25 @@ int main(){
     std::cout << "Current Path: " << path << std::endl;
     // ----------------------------------------------------------------------------
     
+	game test = new game()
+
+	cout << "How many players are there? " << endl;
+	int numPlayers;
+	cin >> numPlayers;
+
+	for (int i = 0; i < numPlayers; i++)
+	{
+		cout << "Enter player name" << endl;
+		string name;
+		cin >> name;
+		//do somthing to access file and then make a player called newP
+		test.addPlayer(newP)
+	}
+
     // TO DO LIST:
     
     
-    // Ask how many players
+    // Ask how many players//done
     // Create or access that many players
         // Create vector; access or create each player file
     

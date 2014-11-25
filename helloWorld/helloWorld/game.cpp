@@ -1,6 +1,9 @@
 #include "game.h"
 
-
+void game::addPlayer(player p)
+{
+	players.push_back(p);
+}
 void game::makeTurn(player activePlayer, string activeWord)
 {
 	cout << " would you like to guess the word? (y/n)" << endl;
