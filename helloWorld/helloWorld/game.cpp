@@ -3,7 +3,13 @@
 
 void game::makeTurn(player activePlayer, string activeWord)
 {
-    // Ask if player would like to guess the word
+	cout << " would you like to guess the word? (y/n)" << endl;
+	char k;
+	cin >> k;
+	if (k == 'y')
+		guessWord();
+	checkLetter(guessLetter(), word);
+
     // If player would like to guess the word, call the guessWord and checkWord functions
     // If not, call the guessLetter and checkLetter functions
     // return (?) info on how game is progressing (e.g., what letters have been guessed correctly)
@@ -24,8 +30,7 @@ char game::guessLetter()
 {
     char guessletter;
     cin >> guessletter;
-    return guessletter;
-    
+    return guessletter;  
 }
 void game::checkLetter(string word, char guessletter)
 {
@@ -84,9 +89,7 @@ void game::saveScores()
 		fout << "Losses: " << temp.getLosses() << endl;
 		fout << "Times Played: " << temp.getTimesPlayed() << endl;
 		fout << "Average: " << temp.getAverage() << endl;
-
-			fout.close();
-
+		fout.close();
 	}
 }
 void game::findLetterPos(string word, string found, char guessLetter)
@@ -101,5 +104,5 @@ void game::findLetterPos(string word, string found, char guessLetter)
 }
 void game::chooseWord()
 {
-	
+	//goes through file and picks one word randomly
 }
