@@ -9,7 +9,7 @@ void game::makeTurn(player activePlayer, string activeWord)
 	if (k == 'y')
 		guessWord();
 	checkLetter(guessLetter(), word);
-
+	cout << _found;
     // If player would like to guess the word, call the guessWord and checkWord functions
     // If not, call the guessLetter and checkLetter functions
     // return (?) info on how game is progressing (e.g., what letters have been guessed correctly)
@@ -101,6 +101,7 @@ void game::findLetterPos(string word, string found, char guessLetter)
 			found.at(i) = guessLetter;
 		}
 	}
+	_found = found;
 }
 void game::chooseWord()
 {

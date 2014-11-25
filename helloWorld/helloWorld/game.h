@@ -15,7 +15,7 @@ private:
     string word;
     vector <player> players;
     int guesses;
-	string found;
+	string _found;
 	ifstream fin;
 	ofstream fout;
     
