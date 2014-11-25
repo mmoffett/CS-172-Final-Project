@@ -18,6 +18,8 @@ private:
     int timesPlayed;
     
 public:
+	player(string _name);
+	player(string _name, string _wins, string _losses, string _timesPlayed);
     string getName();
     int getWins();
     int getLosses();

@@ -1,6 +1,21 @@
 
 #include "player.h"
 
+
+player::player(string _name)
+{
+	name = _name;
+	wins = 0;
+	losses = 0;
+	timesPlayed = 0;
+}
+player::player(string _name, string _wins, string _losses, string _timesPlayed)
+{
+	name = _name;
+	wins = _wins;
+	losses = _losses;
+	timesPlayed = _timesPlayed;
+}
     string player::getName()
     {
         return name;
