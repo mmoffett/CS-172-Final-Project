@@ -25,3 +25,15 @@
     {
         name = _name;
     }
+	void player::upWins()
+	{
+		wins++;
+	}
+	void player::upLosses()
+	{
+		losses++;
+	}
+	void player::upTimesPlayed()
+	{
+		timesPlayed++;
+	}
