@@ -56,9 +56,9 @@ int main(){
         {
 			cout << test.getPlayer(i).getName() << ", it is your turn";
 			//cout << player::getName.players(i) << ", it is your turn";
-            // I'm doing something wrong here...
-            maketurn(players(i), "syzygy");
-            // Also running into some issues here. The vector isn't defined right?
+            // I'm doing something wrong here...//done?
+            maketurn(test.getPlayer(i), "syzygy");
+            // Also running into some issues here. The vector isn't defined right?//done
             // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.
         }
     }
@@ -69,7 +69,8 @@ int main(){
     
     // Ask how many players//done
     // Create or access that many players
-        // Create vector; access or create each player file //done
+        // Create vector;//done
+		//access or create each player file
     
     // Create game//done
     // Run game
