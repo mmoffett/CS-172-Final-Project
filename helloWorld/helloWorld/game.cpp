@@ -51,16 +51,28 @@ void game::checkLetter(string word, char guessletter)
 char game::chooseCategory()
 {
     char category;
-    cout << "Choose a category: \n 1) Christmas \n 2) Don't choose this one \n enter a number only:";
+    cout << "Choose a category: \n 1) Christmas \n 2) Trick Words \n 3) Animals \n enter a number only:";
     cin >> category;
 	return category;
 }
 void game::openFile()
 {
-	char category = chooseCategory();
+	char category;
+	while (category != '1' && category != '2' && category != '3')
+	{
+		category = chooseCategory();
+	}
 	string fileName;
-	//if char is 1, file is___, etc
-	fin.open("Christmas.rtf"); //file name needs to be set
+
+	if (category == '1')
+		filename = "Christmas.rtf";
+	else if (category == '2')
+		filename = "TrickWords.txt";//if want to use rtf for all of them, we need to make them on the mac since i can't
+	else if (category == '3')
+		filename = "Animals.txt";
+	fin.open(filename);
+	string fileName;
+	fin.open(filename);
 	if (!fin)
 	{
 		cout << "can't open file" << endl;
