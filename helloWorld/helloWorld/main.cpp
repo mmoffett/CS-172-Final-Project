@@ -47,17 +47,32 @@ int main(){
         players.push_back(newP);
 		test.addPlayer(newP);//newP will be filled with diff contents
 	}
+    
+    bool gameover = false;
+    
+    while (gameover != true)
+    {
+        for (int i = 0; i < numPlayers-1; i++)
+        {
+            cout << player::getName.players(i) << ", it is your turn";
+            // I'm doing something wrong here...
+            maketurn(players(i), "syzygy");
+            // Also running into some issues here. The vector isn't defined right?
+            // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.
+        }
+    }
+    
 
     // TO DO LIST:
     
     
     // Ask how many players//done
     // Create or access that many players
-        // Create vector; access or create each player file
+        // Create vector; access or create each player file //done
     
     // Create game//done
     // Run game
-        // How are we going to rotate turns?
+        // How are we going to rotate turns? // mostly done, needs some fixes
         // Track how many tries are left
         // Update the "ASCII" function
         //In a for loop -> "Do you want to play again?"
