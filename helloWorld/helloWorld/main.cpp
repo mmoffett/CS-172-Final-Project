@@ -29,11 +29,12 @@ int main(){
     std::cout << "Current Path: " << path << std::endl;
     // ----------------------------------------------------------------------------
     
-    game test = (*new game());
+    game test = new game();
 
 	cout << "How many players are there? " << endl;
 	int numPlayers;
 	cin >> numPlayers;
+    vector <player> players;
 
 	for (int i = 0; i < numPlayers; i++)
 	{
@@ -43,6 +44,7 @@ int main(){
 		//if file exists with this player, read it and make player
 		//else make new file and make player
 		player newP = (*new player(name));
+        players.push_back(newP);
 		test.addPlayer(newP);//newP will be filled with diff contents
 	}
 
