@@ -9,7 +9,7 @@ player::player(string _name)
 	losses = 0;
 	timesPlayed = 0;
 }
-player::player(string _name, string _wins, string _losses, string _timesPlayed)
+player::player(string _name, int _wins, int _losses, int _timesPlayed)
 {
 	name = _name;
 	wins = _wins;

@@ -19,7 +19,7 @@ private:
     
 public:
 	player(string _name);
-	player(string _name, string _wins, string _losses, string _timesPlayed);
+	player(string _name, int _wins, int _losses, int _timesPlayed);
     string getName();
     int getWins();
     int getLosses();
