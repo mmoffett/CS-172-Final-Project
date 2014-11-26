@@ -104,7 +104,7 @@ void game::chooseWord()
 {
 	//goes through file and picks one word randomly
 }
-    void game::saveScores()
+void game::saveScores()
 {
         for (int i = 0; i < players.size(); i++)
         {
@@ -125,4 +125,8 @@ void game::chooseWord()
             fout << "Average: " << temp.getAverage() << endl;
             fout.close();
         }
+}
+Player game::getPlayer(int pos)
+{
+	return players[pos];
 }

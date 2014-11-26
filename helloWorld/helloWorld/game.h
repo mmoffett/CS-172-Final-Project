@@ -34,6 +34,7 @@ public:
     void saveScores();
 	void findLetterPos(string word, string found, char guessletter);
 	void addPlayer(player p);
+	player getPlayer(int pos);
     
 };
 

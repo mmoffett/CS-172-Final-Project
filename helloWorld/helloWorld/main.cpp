@@ -54,7 +54,8 @@ int main(){
     {
         for (int i = 0; i < numPlayers-1; i++)
         {
-            cout << player::getName.players(i) << ", it is your turn";
+			cout << test.getPlayer(i).getName() << ", it is your turn";
+			//cout << player::getName.players(i) << ", it is your turn";
             // I'm doing something wrong here...
             maketurn(players(i), "syzygy");
             // Also running into some issues here. The vector isn't defined right?
