@@ -55,6 +55,7 @@ int main()
 			players.push_back(newP);
 			test.addPlayer(newP);//newP will be filled with diff contents
 		}
+		test.openFile();
 		while (gamewon == false)
 		{
 			int tries;
