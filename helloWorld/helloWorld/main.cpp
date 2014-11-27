@@ -42,6 +42,7 @@ int main(){
 	cin >> numPlayers;
     vector <player> players;
     bool gamewon = false;
+    player *winner;
 
 	for (int i = 0; i < numPlayers; i++)
 	{
@@ -64,7 +65,7 @@ int main(){
             for (int i = 0; i < numPlayers-1; i++)
             {
                 cout << test.getPlayer(i).getName() << ", it is your turn";
-                gamewon = test.makeTurn(test.getPlayer(i), "syzygy");
+                gamewon = test.makeTurn(test.getPlayer(i), "syzygy", winner);
                 // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.
             }
         }

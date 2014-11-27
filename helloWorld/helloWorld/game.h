@@ -21,7 +21,7 @@ private:
 	ofstream fout;
     
 public:
-    bool makeTurn(player activePlayer, string activeWord);
+    bool makeTurn(player activePlayer, string activeWord, player *winner);
     string guessWord();
     bool checkWord(string guessword);
 	void chooseWord();

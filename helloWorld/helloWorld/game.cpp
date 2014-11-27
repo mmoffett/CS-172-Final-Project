@@ -4,7 +4,7 @@ void game::addPlayer(player p)
 {
 	players.push_back(p);
 }
-bool game::makeTurn(player activePlayer, string activeWord)
+bool game::makeTurn(player activePlayer, string activeWord, player *winner)
 {
     bool gamewon = false;
     
@@ -19,6 +19,7 @@ bool game::makeTurn(player activePlayer, string activeWord)
         if (activeWord.find('_') > 0)
         {
             gamewon = true;
+            *winner = activePlayer;
         }
 
     
