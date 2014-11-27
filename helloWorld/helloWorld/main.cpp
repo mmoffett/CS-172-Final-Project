@@ -14,10 +14,11 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
     // ----------------------------------------------------------------------------
     // This makes relative paths work in C++ in Xcode by changing directory to the Resources folder inside the .app bundle
-#ifdef __APPLE__
+	#ifdef __APPLE__
     CFBundleRef mainBundle = CFBundleGetMainBundle();
     CFURLRef resourcesURL = CFBundleCopyResourcesDirectoryURL(mainBundle);
     char path[PATH_MAX];
@@ -33,53 +34,50 @@ int main(){
     
     char replay;
     while (replay == 'y' || replay == 'Y')
-    
     {
-    game test = (*new game());
+		game test = (*new game());
 
-	cout << "How many players are there? " << endl;
-	int numPlayers;
-	cin >> numPlayers;
-    vector <player> players;
-    bool gamewon = false;
-    player *winner;
+		cout << "How many players are there? " << endl;
+		int numPlayers;
+		cin >> numPlayers;
+		vector <player> players;
+	    bool gamewon = false;
+		player *winner;
 
-	for (int i = 0; i < numPlayers; i++)
-	{
-		cout << "Enter player name" << endl;
-		string name;
-		cin >> name;
-		//if file exists with this player, read it and make player
-		//else make new file and make player
-		player newP = (*new player(name));
-        players.push_back(newP);
-		test.addPlayer(newP);//newP will be filled with diff contents
-	}
-    
-    
-    while (gamewon == false)
-    {
-        int tries;
-        for (tries = 0; tries < 6; tries++)
-        {
-            for (int i = 0; i < numPlayers-1; i++)
-            {
-                cout << test.getPlayer(i).getName() << ", it is your turn";
-                gamewon = test.makeTurn(test.getPlayer(i), "syzygy", winner);
-                // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.
-            }
-        }
-        if (tries == 0)
-        {
-            cout << "GAME OVER \n Would you like to play again? (y/n) \n";
-            cin >> replay;
-            if (replay != 'y' && replay != 'Y')
-                //This is where we should put the code to commit scores
-                cout << "Goodbye!";
+		for (int i = 0; i < numPlayers; i++)
+		{
+			cout << "Enter player name" << endl;
+			string name;
+			cin >> name;
+			//if file exists with this player, read it and make player
+			//else make new file and make player
+			player newP = (*new player(name));
+			players.push_back(newP);
+			test.addPlayer(newP);//newP will be filled with diff contents
+		}
+		while (gamewon == false)
+		{
+			int tries;
+			for (tries = 0; tries < 6; tries++)
+			{
+				for (int i = 0; i < numPlayers-1; i++)
+				{
+					 cout << test.getPlayer(i).getName() << ", it is your turn";
+					gamewon = test.makeTurn(test.getPlayer(i), "syzygy", winner);
+					 // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.
+				}
+			}
+			if (tries == 0)
+			{
+				cout << "GAME OVER \n Would you like to play again? (y/n) \n";
+				cin >> replay;
+				if (replay != 'y' && replay != 'Y')
+					//This is where we should put the code to commit scores
+					cout << "Goodbye!";
             
-        }
-    }
-}
+			}
+		}
+	}
 
 
     // TO DO LIST:
