@@ -9,6 +9,8 @@
 #include <string>
 #include "game.h"
 #include "player.h"
+#include "game.cpp"
+#include "player.h"
 
 using namespace std;
 
@@ -29,7 +31,7 @@ int main(){
     std::cout << "Current Path: " << path << std::endl;
     // ----------------------------------------------------------------------------
     
-    game test = new game();
+    game test = (*new game());
 
 	cout << "How many players are there? " << endl;
 	int numPlayers;
@@ -57,7 +59,7 @@ int main(){
 			cout << test.getPlayer(i).getName() << ", it is your turn";
 			//cout << player::getName.players(i) << ", it is your turn";
             // I'm doing something wrong here...//done?
-            maketurn(test.getPlayer(i), "syzygy");
+            game::makeTurn(test.getPlayer(i), "syzygy");
             // Also running into some issues here. The vector isn't defined right?//done
             // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.
         }

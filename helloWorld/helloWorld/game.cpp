@@ -62,7 +62,7 @@ void game::openFile()
 	{
 		category = chooseCategory();
 	}
-	string fileName;
+	string filename;
 
 	if (category == '1')
 		filename = "Christmas.rtf";
@@ -126,7 +126,7 @@ void game::saveScores()
             fout.close();
         }
 }
-Player game::getPlayer(int pos)
+player game::getPlayer(int pos)
 {
 	return players[pos];
 }
