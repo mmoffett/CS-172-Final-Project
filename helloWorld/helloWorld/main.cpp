@@ -31,12 +31,17 @@ int main(){
     std::cout << "Current Path: " << path << std::endl;
     // ----------------------------------------------------------------------------
     
+    char replay;
+    while (replay == 'y' || replay == 'Y')
+    
+    {
     game test = (*new game());
 
 	cout << "How many players are there? " << endl;
 	int numPlayers;
 	cin >> numPlayers;
     vector <player> players;
+    bool gamewon = false;
 
 	for (int i = 0; i < numPlayers; i++)
 	{
@@ -50,18 +55,31 @@ int main(){
 		test.addPlayer(newP);//newP will be filled with diff contents
 	}
     
-    bool gameover = false;
     
-    while (gameover != true)
+    while (gamewon == false)
     {
-        for (int i = 0; i < numPlayers-1; i++)
+        int tries;
+        for (tries = 0; tries < 6; tries++)
         {
-			cout << test.getPlayer(i).getName() << ", it is your turn";
-            test.makeTurn(test.getPlayer(i), "syzygy");
-            // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.
+            for (int i = 0; i < numPlayers-1; i++)
+            {
+                cout << test.getPlayer(i).getName() << ", it is your turn";
+                gamewon = test.makeTurn(test.getPlayer(i), "syzygy");
+                // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.
+            }
+        }
+        if (tries == 0)
+        {
+            cout << "GAME OVER \n Would you like to play again? (y/n) \n";
+            cin >> replay;
+            if (replay != 'y' && replay != 'Y')
+                //This is where we should put the code to commit scores
+                cout << "Goodbye!";
+            
         }
     }
-    
+}
+
 
     // TO DO LIST:
     
@@ -74,9 +92,9 @@ int main(){
     // Create game//done
     // Run game
         // How are we going to rotate turns? // mostly done, needs some fixes
-        // Track how many tries are left
+        // Track how many tries are left // Done!
         // Update the "ASCII" function
-        //In a for loop -> "Do you want to play again?"
+        //In a for loop -> "Do you want to play again?" // Done!
     // These are both in the game class!
     
     // Output who won each game

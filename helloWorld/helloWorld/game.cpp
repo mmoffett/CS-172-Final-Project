@@ -4,19 +4,28 @@ void game::addPlayer(player p)
 {
 	players.push_back(p);
 }
-void game::makeTurn(player activePlayer, string activeWord)
+bool game::makeTurn(player activePlayer, string activeWord)
 {
-	cout << " would you like to guess the word? (y/n)" << endl;
-	char k;
-	cin >> k;
-	if (k == 'y')
-		guessWord();
-    char g=guessLetter();
-	checkLetter(word, g);
-	cout << _found;
+    bool gamewon = false;
+    
+        cout << " would you like to guess the word? (y/n)" << endl;
+        char k;
+        cin >> k;
+        if (k == 'y')
+            guessWord();
+        char g=guessLetter();
+        checkLetter(word, g);
+        cout << _found;
+        if (activeWord.find('_') > 0)
+        {
+            gamewon = true;
+        }
+
+    
     // If player would like to guess the word, call the guessWord and checkWord functions
     // If not, call the guessLetter and checkLetter functions
     // return (?) info on how game is progressing (e.g., what letters have been guessed correctly)
+    return gamewon;
 }
 string game::guessWord()
 {
