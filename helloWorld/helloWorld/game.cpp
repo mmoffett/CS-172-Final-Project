@@ -88,7 +88,7 @@ void game::openFile()
 		cout << "can't open file" << endl;
         return;
 	}
-	chooseWord();
+	chooseWord(fin);
 	fin.close();
 }
 void game::updatePlayers()

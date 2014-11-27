@@ -24,7 +24,7 @@ public:
     bool makeTurn(player activePlayer, string activeWord, player *winner);
     string guessWord();
     bool checkWord(string guessword);
-	void chooseWord();
+	void chooseWord(ifstream& fin);
     bool checkWord(string guessword, string gameword);
     char guessLetter();
     void checkLetter(string word, char guessletter);
