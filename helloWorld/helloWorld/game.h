@@ -26,14 +26,14 @@ public:
     string guessWord();
     bool checkWord(string guessword);
 	void chooseWord(ifstream& fin);
-    bool checkWord(string guessword, string gameword);
+    bool checkWord(string guessword);
     char guessLetter();
-    void checkLetter(string word, char guessletter);
+    void checkLetter(char guessletter);
     char chooseCategory();
     void openFile();
     void updatePlayers();
     void saveScores();
-	void findLetterPos(string word, string found, char guessletter);
+	void findLetterPos(char guessletter);
 	void addPlayer(player p);
 	player getPlayer(int pos);
     

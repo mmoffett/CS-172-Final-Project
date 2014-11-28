@@ -11,10 +11,10 @@ bool game::makeTurn(player activePlayer, player *winner)
         cout << " would you like to guess the word? (y/n)" << endl;
         char k;
         cin >> k;
-        if (k == 'y')
-            guessWord();
+        if (k == 'y'||k=='Y')
+           return checkWord(guessWord());
         char g=guessLetter();
-        checkLetter(word, g);
+        checkLetter(g);
         cout << _found;
         if (_found.find('_') == 0)
         {
@@ -34,11 +34,12 @@ string game::guessWord()
     getline(cin, guessword);
     return guessword;
 }
-bool game::checkWord(string guessword, string gameword)
+bool game::checkWord(string guessword)
 {
-    if (gameword == guessword)
+    if (word == guessword)
         return true;
-    else return false;
+    else 
+		return false;
 }
 char game::guessLetter()
 {
@@ -47,11 +48,11 @@ char game::guessLetter()
     cin >> guessletter;
     return guessletter;  
 }
-void game::checkLetter(string word, char guessletter)
+void game::checkLetter(char guessletter)
 {
 	if (word.find(guessletter) != -1)
 	{
-        findLetterPos(word, _found, guessletter);
+        findLetterPos(guessletter);
 	}
     // This only checks IF the letter is in the word. We're going to need something to return the locations
     // of all instances of that particular letter, and then outputs to the user where that letter is in the word.
@@ -101,16 +102,15 @@ void game::updatePlayers()
     }
 }
 
-void game::findLetterPos(string word, string found, char guessLetter)
+void game::findLetterPos(char guessLetter)
 {
     for (int i = 0; i < word.length();i++)
 	{
 		if (word.at(i) == guessLetter)
 		{
-			found.at(i) = guessLetter;
+			_found.at(i) = guessLetter;
 		}
 	}
-	_found = found;
 }
 void game::chooseWord(ifstream& fin)
 {
