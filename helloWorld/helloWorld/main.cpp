@@ -55,7 +55,7 @@ int main()
 			//players.push_back(newP);--> don't need to store this within main because we just access the one game has
 			test.addPlayer(newP);//newP will be filled with diff contents
 		}
-		test.openFile();
+		test.openFile();//word is decided here
 		while (gamewon == false)
 		{
 			int tries;
