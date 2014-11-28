@@ -40,7 +40,7 @@ int main()
 		cout << "How many players are there? " << endl;
 		int numPlayers;
 		cin >> numPlayers;
-		vector <player> players;
+		//vector <player> players;
 	    bool gamewon = false;
 		player *winner;
 
@@ -52,7 +52,7 @@ int main()
 			//if file exists with this player, read it and make player
 			//else make new file and make player
 			player newP = (*new player(name));
-			players.push_back(newP);
+			//players.push_back(newP);--> don't need to store this within main because we just access the one game has
 			test.addPlayer(newP);//newP will be filled with diff contents
 		}
 		test.openFile();
@@ -63,7 +63,7 @@ int main()
 			{
 				for (int i = 0; i < numPlayers-1; i++)
 				{
-					 cout << test.getPlayer(i).getName() << ", it is your turn";
+					cout << test.getPlayer(i).getName() << ", it is your turn";
 					gamewon = test.makeTurn(test.getPlayer(i), "syzygy", winner);
 					 // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.
 				}
