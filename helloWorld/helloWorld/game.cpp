@@ -62,14 +62,14 @@ void game::checkLetter(char guessletter)
 char game::chooseCategory()
 {
     char category;
-    cout << "Choose a category: \n 1) Christmas \n 2) Trick Words \n 3) Animals \n enter a number only:";
+    cout << "Choose a category: \n 1) Christmas \n 2) Trick Words \n 3) Animals 4) Harry Potter \n enter a number only:";
     cin >> category;
 	return category;
 }
 void game::openFile()
 {
 	char category;
-	while (category != '1' && category != '2' && category != '3')
+	while (category != '1' && category != '2' && category != '3'&& category != '4')
 	{
 		category = chooseCategory();
 	}
@@ -81,6 +81,8 @@ void game::openFile()
 		filename = "TrickWords.txt";//if want to use rtf for all of them, we need to make them on the mac since i can't
 	else if (category == '3')
 		filename = "Animals.txt";
+	else if (category == '4')
+		filename = "HarryPotter.txt";
 	fin.open(filename);
 	string fileName;
 	fin.open(filename);
