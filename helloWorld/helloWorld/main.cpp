@@ -64,7 +64,7 @@ int main()
 				for (int i = 0; i < numPlayers-1; i++)
 				{
 					cout << test.getPlayer(i).getName() << ", it is your turn";
-					gamewon = test.makeTurn(test.getPlayer(i), "syzygy", winner);
+					gamewon = test.makeTurn(test.getPlayer(i), winner);
 					 // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.
 				}
 			}
