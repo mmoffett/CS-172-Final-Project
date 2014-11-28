@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <ctime>
 
 #ifndef hangman_game_h
 #define hangman_game_h

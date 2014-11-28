@@ -115,8 +115,9 @@ void game::findLetterPos(string word, string found, char guessLetter)
 void game::chooseWord(ifstream& fin)
 {
 	string temp;
-	//put the time random number picker thing here, then use that in the i<...number in the for loop below
-	for (int i = 0; i < 3/*we should make a standard number of words in each file*/; i++)
+	srand(time(NULL));
+	int x = rand() % 20;//20 will be changed to the number we decide of how many words should be in each file
+	for (int i = 0; i < x; i++)
 	{
 		fin >> temp;
 	}
