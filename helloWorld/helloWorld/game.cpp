@@ -116,7 +116,7 @@ void game::chooseWord(ifstream& fin)
 {
 	string temp;
 	srand(time(NULL));
-	int x = rand() % 20;//20 will be changed to the number we decide of how many words should be in each file
+	int x = rand() % 39;
 	for (int i = 0; i < x; i++)
 	{
 		fin >> temp;
