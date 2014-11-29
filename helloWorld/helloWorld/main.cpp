@@ -81,18 +81,20 @@ int main()
 		test.openFile();//word is decided here
 		while (gamewon == false)
 		{
-			int tries;
-			for (tries = 0; tries < 6; tries++)
+			//int tries;
+			for (int tries = 0; tries < 6; tries++)
 			{
 				for (int i = 0; i < numPlayers-1; i++)
 				{
 					cout << test.getPlayer(i).getName() << ", it is your turn";
 					gamewon = test.makeTurn(test.getPlayer(i), winner);
+					if (gamewon == true)
+						cout << "Congratulations, You Won\n" << endl;
 					 // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.//done
 				}
 			}
-			if (tries == 0)
-			{
+			//if (tries == 0)
+			//{
 				cout << "GAME OVER \n Would you like to play again? (y/n) \n";
 				cin >> replay;
 				if (replay != 'y' && replay != 'Y')
@@ -101,8 +103,10 @@ int main()
 					//This is where we should put the code to commit scores//done
 					cout << "Goodbye!";
 				}
+				else
+					gamewon = false;
             
-			}
+			//}
 		}
 	}
 
