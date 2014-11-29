@@ -49,9 +49,21 @@ int main()
 			cout << "Enter player name" << endl;
 			string name;
 			cin >> name;
-			//if file exists with this player, read it and make player
-			//else make new file and make player
-			player newP = (*new player(name));
+			string filename = name;
+			filename += ".txt";
+			fin.open(filename);
+			player nextPlayer;
+			if (fin.fail())
+			{
+				cout << "Welcome to the newest player! \nYou currently have 0 wins, 0 losses, and no games played"<<endl;
+				nextPlayer = (*new player(name)); //makes empty player
+			}
+			else
+			{
+				//if file exists with this player, read it and make player
+			}
+			player newP = nextPlayer;
+			//player newP = (*new player(name));
 			//players.push_back(newP);--> don't need to store this within main because we just access the one game has
 			test.addPlayer(newP);//newP will be filled with diff contents
 		}
@@ -88,7 +100,7 @@ int main()
     
     
     // Ask how many players//done
-    // Create or access that many players
+    // Create or access that many players//doneish
         // Create vector;//done
 		//access or create each player file
     
