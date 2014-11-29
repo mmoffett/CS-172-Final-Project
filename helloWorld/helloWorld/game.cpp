@@ -156,3 +156,34 @@ player game::getPlayer(int pos)
 {
 	return players[pos];
 }
+player game::createPlayer()
+{
+	cout << "Enter player name" << endl;
+	string name;
+	cin >> name;
+	string filename = name;
+	filename += ".txt";
+	fin.open(filename);
+	player nextPlayer;
+	if (fin.fail())
+	{
+		cout << "Welcome to the newest player! \nYou currently have 0 wins, 0 losses, and no games played" << endl;
+		nextPlayer = (*new player(name)); //makes empty player
+	}
+	else
+	{
+		string random;
+		getline(fin, random);//this is the intro line(we could move that line to the end so that it doesn't butt in here)
+		getline(fin, random);//this is the name which we already have
+		string num;
+		getline(fin, num);
+		int win = atoi(num.c_str());
+		getline(fin, num);
+		int loss = atoi(num.c_str());
+		getline(fin, num);
+		int played = atoi(num.c_str());
+		nextPlayer(*new player(name, win, loss, played));
+		//if file exists with this player, read it and make player//done? does this work?
+	}
+	return nextPlayer;
+}

@@ -46,37 +46,38 @@ int main()
 
 		for (int i = 0; i < numPlayers; i++)
 		{
-			cout << "Enter player name" << endl;
-			string name;
-			cin >> name;
-			string filename = name;
-			filename += ".txt";
-			fin.open(filename);
-			player nextPlayer;
-			if (fin.fail())
-			{
-				cout << "Welcome to the newest player! \nYou currently have 0 wins, 0 losses, and no games played"<<endl;
-				nextPlayer = (*new player(name)); //makes empty player
-			}
-			else
-			{
-				string random;
-				getline(fin, random);//this is the intro line(we could move that line to the end so that it doesn't butt in here)
-				getline(fin, random);//this is the name which we already have
-				string num;
-				getline(fin, num);
-				int win = atoi(num.c_str());
-				getline(fin, num);
-				int loss = atoi(num.c_str());
-				getline(fin, num);
-				int played = atoi(num.c_str());
-				nextPlayer(*new player(name, win, loss, played));
-				//if file exists with this player, read it and make player//done? does this work?
-			}
-			player newP = nextPlayer;
-			//player newP = (*new player(name));
-			//players.push_back(newP);--> don't need to store this within main because we just access the one game has
-			test.addPlayer(newP);//newP will be filled with diff contents
+			//cout << "Enter player name" << endl;
+			//string name;
+			//cin >> name;
+			//string filename = name;
+			//filename += ".txt";
+			//fin.open(filename);
+			//player nextPlayer;
+			//if (fin.fail())
+			//{
+			//	cout << "Welcome to the newest player! \nYou currently have 0 wins, 0 losses, and no games played"<<endl;
+			//	nextPlayer = (*new player(name)); //makes empty player
+			//}
+			//else
+			//{
+			//	string random;
+			//	getline(fin, random);//this is the intro line(we could move that line to the end so that it doesn't butt in here)
+			//	getline(fin, random);//this is the name which we already have
+			//	string num;
+			//	getline(fin, num);
+			//	int win = atoi(num.c_str());
+			//	getline(fin, num);
+			//	int loss = atoi(num.c_str());
+			//	getline(fin, num);
+			//	int played = atoi(num.c_str());
+			//	nextPlayer(*new player(name, win, loss, played));
+			//	//if file exists with this player, read it and make player//done? does this work?
+			//}
+			//player newP = nextPlayer;
+			////player newP = (*new player(name));
+			////players.push_back(newP);--> don't need to store this within main because we just access the one game has
+			//I moved this stuff into a function in game
+			test.addPlayer(test.createPlayer());//newP will be filled with diff contents
 		}
 		test.openFile();//word is decided here
 		while (gamewon == false)

@@ -36,6 +36,7 @@ public:
 	void findLetterPos(char guessletter);
 	void addPlayer(player p);
 	player getPlayer(int pos);
+	player createPlayer();
     
 };
 
