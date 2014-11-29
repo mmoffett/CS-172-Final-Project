@@ -65,7 +65,7 @@ int main()
 				{
 					cout << test.getPlayer(i).getName() << ", it is your turn";
 					gamewon = test.makeTurn(test.getPlayer(i), winner);
-					 // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.
+					 // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.//done
 				}
 			}
 			if (tries == 0)
@@ -73,8 +73,11 @@ int main()
 				cout << "GAME OVER \n Would you like to play again? (y/n) \n";
 				cin >> replay;
 				if (replay != 'y' && replay != 'Y')
-					//This is where we should put the code to commit scores
+				{
+					test.saveScores();
+					//This is where we should put the code to commit scores//done
 					cout << "Goodbye!";
+				}
             
 			}
 		}

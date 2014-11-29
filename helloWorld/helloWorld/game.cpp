@@ -23,9 +23,9 @@ bool game::makeTurn(player activePlayer, player *winner)
         }
 
     
-    // If player would like to guess the word, call the guessWord and checkWord functions
-    // If not, call the guessLetter and checkLetter functions
-    // return (?) info on how game is progressing (e.g., what letters have been guessed correctly)
+    // If player would like to guess the word, call the guessWord and checkWord functions//done
+    // If not, call the guessLetter and checkLetter functions//done
+    // return (?) info on how game is progressing (e.g., what letters have been guessed correctly)-->if game is won//done
     return gamewon;
 }
 string game::guessWord()
@@ -57,7 +57,7 @@ void game::checkLetter(char guessletter)
     // This only checks IF the letter is in the word. We're going to need something to return the locations
     // of all instances of that particular letter, and then outputs to the user where that letter is in the word.
     // We can write another function to do so, and then call it from this function, I think, as that would make
-    // it so we don't have to run that function if the letter isn't in the word at all.
+    // it so we don't have to run that function if the letter isn't in the word at all.//done
 }
 char game::chooseCategory()
 {
@@ -143,12 +143,12 @@ void game::saveScores()
                 cout << "can't open file" << endl;
                 return;
             }
-            fout << "Player Name: " << temp.getName();
-            fout << "Newest Data: " << endl;
-            fout << "Wins: " << temp.getWins() << endl;
-            fout << "Losses: " << temp.getLosses() << endl;
-            fout << "Times Played: " << temp.getTimesPlayed() << endl;
-            fout << "Average: " << temp.getAverage() << endl;
+			fout << "Information for Newest Data: Player Name, Wins, Losses, Times Played, Average\n";
+            fout << temp.getName()<<endl;
+            fout << temp.getWins() << endl;
+            fout << temp.getLosses() << endl;
+            fout << temp.getTimesPlayed() << endl;
+            fout << temp.getAverage() << endl;
             fout.close();
         }
 }
