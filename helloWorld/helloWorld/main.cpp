@@ -60,7 +60,18 @@ int main()
 			}
 			else
 			{
-				//if file exists with this player, read it and make player
+				string random;
+				getline(fin, random);//this is the intro line(we could move that line to the end so that it doesn't butt in here)
+				getline(fin, random);//this is the name which we already have
+				string num;
+				getline(fin, num);
+				int win = atoi(num.c_str());
+				getline(fin, num);
+				int loss = atoi(num.c_str());
+				getline(fin, num);
+				int played = atoi(num.c_str());
+				nextPlayer(*new player(name, win, loss, played));
+				//if file exists with this player, read it and make player//done? does this work?
 			}
 			player newP = nextPlayer;
 			//player newP = (*new player(name));
