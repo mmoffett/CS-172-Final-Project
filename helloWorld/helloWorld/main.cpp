@@ -90,7 +90,7 @@ int main()
 					cout << test.getPlayer(i).getName() << ", it is your turn";
 					gamewon = test.makeTurn(test.getPlayer(i), winner);
 					if (gamewon == true)
-						cout << "Congratulations, You Won\n" << endl;
+						cout << "Congratulations "<<test.getPlayer(i).getName()<<", You Won\n" << endl;
 					 // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.//done
 				}
 			}
@@ -103,6 +103,10 @@ int main()
 					test.saveScores();
 					//This is where we should put the code to commit scores//done
 					cout << "Goodbye!";
+					for (int i = 0; i < numPlayers; i++)
+					{
+						cout << test.getPlayer(i).getName() << " has an average score of " << test.getPlayer(i).getAverage();
+					}
 				}
 				else
 					gamewon = false;
@@ -118,7 +122,7 @@ int main()
     // Ask how many players//done
     // Create or access that many players//doneish
         // Create vector;//done
-		//access or create each player file
+		//access or create each player file//done
     
     // Create game//done
     // Run game
@@ -128,9 +132,9 @@ int main()
         //In a for loop -> "Do you want to play again?" // Done!
     // These are both in the game class!
     
-    // Output who won each game
-    // Output player averages
-    // Update scores when program closes
+    // Output who won each game//done
+    // Output player averages//done
+    // Update scores when program closes//done
 
 }
 
