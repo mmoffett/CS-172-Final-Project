@@ -78,9 +78,9 @@ int main()
 			////player newP = (*new player(name));
 			////players.push_back(newP);--> don't need to store this within main because we just access the one game has
 			//I moved this stuff into a function in game
-			test.addPlayer(test.createPlayer());//newP will be filled with diff contents
+			test->addPlayer(test->createPlayer());//newP will be filled with diff contents
 		}
-		test.openFile();//word is decided here
+		test->openFile();//word is decided here
 		while (gamewon == false)
 		{
 			//int tries;
@@ -88,10 +88,10 @@ int main()
 			{
 				for (int i = 0; i < numPlayers-1; i++)
 				{
-					cout << test.getPlayer(i).getName() << ", it is your turn";
-					gamewon = test.makeTurn(test.getPlayer(i), winner);
+					cout << test->getPlayer(i).getName() << ", it is your turn";
+					gamewon = test->makeTurn(test->getPlayer(i), winner);
 					if (gamewon == true)
-						cout << "Congratulations "<<test.getPlayer(i).getName()<<", You Won\n" << endl;
+						cout << "Congratulations "<<test->getPlayer(i).getName()<<", You Won\n" << endl;
 					 // Since we don't have file i/o working very well right now, I'm using syzygy as a stand-in word.//done
 				}
 			}
@@ -101,12 +101,12 @@ int main()
 				cin >> replay;
 				if (replay != 'y' && replay != 'Y')
 				{
-					test.saveScores();
+					test->saveScores();
 					//This is where we should put the code to commit scores//done
 					cout << "Goodbye!";
 					for (int i = 0; i < numPlayers; i++)
 					{
-						cout << test.getPlayer(i).getName() << " has an average score of " << test.getPlayer(i).getAverage();
+						cout << test->getPlayer(i).getName() << " has an average score of " << test->getPlayer(i).getAverage();
 					}
 				}
 				else

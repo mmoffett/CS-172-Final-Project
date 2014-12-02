@@ -164,11 +164,10 @@ player game::createPlayer()
 	string filename = name;
 	filename += ".txt";
 	fin.open(filename);
-	player nextPlayer;
+	player nextPlayer=(*new player(name));//makes empty player with name
 	if (fin.fail())
 	{
-		cout << "Welcome to the newest player! \nYou currently have 0 wins, 0 losses, and no games played" << endl;
-		nextPlayer = (*new player(name)); //makes empty player
+		cout << "Welcome to the newest player "<< name<<"! \nYou currently have 0 wins, 0 losses, and no games played" << endl;
 	}
 	else
 	{
@@ -182,7 +181,9 @@ player game::createPlayer()
 		int loss = atoi(num.c_str());
 		getline(fin, num);
 		int played = atoi(num.c_str());
-		nextPlayer(*new player(name, win, loss, played));
+        nextPlayer.setWinCount(win);
+        nextPlayer.setLoss(loss);
+        nextPlayer.setTimesPlayed(played);
 		//if file exists with this player, read it and make player//done? does this work?
 	}
 	return nextPlayer;
