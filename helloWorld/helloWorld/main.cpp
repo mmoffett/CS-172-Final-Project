@@ -1,4 +1,4 @@
-#define __APPLE__ // Comment this line out when compiling on a Windows platform
+//#define __APPLE__ // Comment this line out when compiling on a Windows platform
 
 #ifdef __APPLE__
 #include "CoreFoundation/CoreFoundation.h"
@@ -9,7 +9,7 @@
 #include <string>
 #include "game.h"
 #include "player.h"
-#include "game.cpp"
+//#include "game.cpp"
 #include "player.h"
 
 using namespace std;
@@ -30,12 +30,13 @@ int main()
     
     chdir(path);
     std::cout << "Current Path: " << path << std::endl;
+    #endif
     // ----------------------------------------------------------------------------
     
-    char replay;
+    char replay = 'y';
     while (replay == 'y' || replay == 'Y')
     {
-		game test = (*new game());
+		game *test = new game();
 
 		cout << "How many players are there? " << endl;
 		int numPlayers;
@@ -139,6 +140,3 @@ int main()
 }
 
 
-
-
-#endif

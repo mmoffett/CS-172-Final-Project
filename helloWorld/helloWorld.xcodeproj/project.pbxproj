@@ -25,13 +25,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6A63C4151A2A839C008F9496 /* Animals.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Animals.txt; sourceTree = "<group>"; };
+		6A63C4161A2A83A9008F9496 /* HarryPotter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HarryPotter.txt; sourceTree = "<group>"; };
+		6A63C4171A2A83AF008F9496 /* TrickWords.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrickWords.txt; sourceTree = "<group>"; };
 		6AE2365C1A1BF000003D47FD /* helloWorld */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = helloWorld; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE2365F1A1BF000003D47FD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6AE236791A1DC830003D47FD /* player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
 		6AE2367A1A1E8AF1003D47FD /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		6AE2367B1A1E93F1003D47FD /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
 		6AE2367D1A1E950B003D47FD /* game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
-		6AE2367F1A1E974E003D47FD /* Christmas.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Christmas.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +71,9 @@
 				6AE2367A1A1E8AF1003D47FD /* game.h */,
 				6AE2367B1A1E93F1003D47FD /* player.cpp */,
 				6AE2367D1A1E950B003D47FD /* game.cpp */,
-				6AE2367F1A1E974E003D47FD /* Christmas.rtf */,
+				6A63C4151A2A839C008F9496 /* Animals.txt */,
+				6A63C4161A2A83A9008F9496 /* HarryPotter.txt */,
+				6A63C4171A2A83AF008F9496 /* TrickWords.txt */,
 			);
 			name = hangman;
 			path = helloWorld;

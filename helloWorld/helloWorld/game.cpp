@@ -76,7 +76,7 @@ void game::openFile()
 	string filename;
 
 	if (category == '1')
-		filename = "Christmas.rtf";
+		filename = "Christmas.txt";
 	else if (category == '2')
 		filename = "TrickWords.txt";//if want to use rtf for all of them, we need to make them on the mac since i can't
 	else if (category == '3')
@@ -125,7 +125,7 @@ void game::chooseWord(ifstream& fin)
 	}
 	word = temp;
 	_found = "_";
-	for (int i = 1; i < word.length() << i++)
+    for (int i = 1; i < word.length(); i++)
 	{
 		_found += "_";
 	}

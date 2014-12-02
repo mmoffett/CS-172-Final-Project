@@ -7,7 +7,7 @@
 #ifndef hangman_game_h
 #define hangman_game_h
 #include "player.h"
-#include "Christmas.rtf"
+#include "Christmas.txt"
 
 using namespace std;
 
@@ -26,7 +26,6 @@ public:
     string guessWord();
     bool checkWord(string guessword);
 	void chooseWord(ifstream& fin);
-    bool checkWord(string guessword);
     char guessLetter();
     void checkLetter(char guessletter);
     char chooseCategory();
