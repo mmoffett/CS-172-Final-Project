@@ -29,6 +29,9 @@ public:
 	void upWins();
 	void upLosses();
 	void upTimesPlayed();
+    void setWinCount(int win);
+    void setLoss(int loss);
+    void setTimesPlayed(int played);
 
 };
 

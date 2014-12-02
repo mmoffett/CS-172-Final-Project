@@ -15,6 +15,7 @@ player::player(string _name, int _wins, int _losses, int _timesPlayed)
 	wins = _wins;
 	losses = _losses;
 	timesPlayed = _timesPlayed;
+    //hello
 }
     string player::getName()
     {
@@ -52,3 +53,15 @@ player::player(string _name, int _wins, int _losses, int _timesPlayed)
 	{
 		timesPlayed++;
 	}
+    void player::setWinCount(int win)
+    {
+        wins = win;
+    }
+    void player::setLoss(int loss)
+    {
+        losses = loss;
+    }
+    void player::setTimesPlayed(int played)
+    {
+        timesPlayed = played;
+    }
