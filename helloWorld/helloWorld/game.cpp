@@ -76,13 +76,13 @@ void game::openFile()
 	string filename;
 
 	if (category == '1')
-		filename = "Christmas.txt";
+		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/Christmas.txt";
 	else if (category == '2')
-		filename = "TrickWords.txt";//if want to use rtf for all of them, we need to make them on the mac since i can't
+		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/TrickWords.txt";//if want to use rtf for all of them, we need to make them on the mac since i can't
 	else if (category == '3')
-		filename = "Animals.txt";
+		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/Animals.txt";
 	else if (category == '4')
-		filename = "HarryPotter.txt";
+		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/HarryPotter.txt";
 	fin.open(filename);
 	string fileName;
 	fin.open(filename);
@@ -167,7 +167,7 @@ player game::createPlayer()
 	player nextPlayer=(*new player(name));//makes empty player with name
 	if (fin.fail())
 	{
-		cout << "Welcome to the newest player "<< name<<"! \nYou currently have 0 wins, 0 losses, and no games played" << endl;
+		cout << "Welcome, new player, "<< name<<"! \nYou currently have 0 wins, 0 losses, and no games played" << endl;
 	}
 	else
 	{
@@ -184,6 +184,7 @@ player game::createPlayer()
         nextPlayer.setWinCount(win);
         nextPlayer.setLoss(loss);
         nextPlayer.setTimesPlayed(played);
+        cout << "Welcome, player, "<< name<<"! \nYou currently have "<<win<<" wins, "<<loss<<" losses, and "<<played<<" games played" << endl;
 		//if file exists with this player, read it and make player//done? does this work?
 	}
 	return nextPlayer;
