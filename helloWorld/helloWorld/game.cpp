@@ -21,12 +21,8 @@ bool game::makeTurn(player activePlayer, player *winner)
             gamewon = true;
             *winner = activePlayer;
         }
-
     
-    // If player would like to guess the word, call the guessWord and checkWord functions//done
-    // If not, call the guessLetter and checkLetter functions//done
-    // return (?) info on how game is progressing (e.g., what letters have been guessed correctly)-->if game is won//done
-    return gamewon;
+       return gamewon;
 }
 string game::guessWord()
 {
@@ -54,21 +50,17 @@ void game::checkLetter(char guessletter)
 	{
         findLetterPos(guessletter);
 	}
-    // This only checks IF the letter is in the word. We're going to need something to return the locations
-    // of all instances of that particular letter, and then outputs to the user where that letter is in the word.
-    // We can write another function to do so, and then call it from this function, I think, as that would make
-    // it so we don't have to run that function if the letter isn't in the word at all.//done
 }
 char game::chooseCategory()
 {
     char category;
-    cout << "Choose a category: \n 1) Christmas \n 2) Trick Words \n 3) Animals 4) Harry Potter \n enter a number only:";
+    cout << "Choose a category: \n 1) Christmas \n 2) Trick Words \n 3) Animals \n 4) Harry Potter \n enter a number only:";
     cin >> category;
 	return category;
 }
 void game::openFile()
 {
-	char category;
+	char category = 0;
 	while (category != '1' && category != '2' && category != '3'&& category != '4')
 	{
 		category = chooseCategory();
@@ -78,17 +70,16 @@ void game::openFile()
 	if (category == '1')
 		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/Christmas.txt";
 	else if (category == '2')
-		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/TrickWords.txt";//if want to use rtf for all of them, we need to make them on the mac since i can't
+		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/TrickWords.txt";
 	else if (category == '3')
 		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/Animals.txt";
 	else if (category == '4')
 		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/HarryPotter.txt";
 	fin.open(filename);
-	string fileName;
-	fin.open(filename);
 	if (!fin)
 	{
 		cout << "can't open file" << endl;
+        // We should have something here that ends the program if the file can't be opened.
         return;
 	}
 	chooseWord(fin);

@@ -15,7 +15,6 @@ player::player(string _name, int _wins, int _losses, int _timesPlayed)
 	wins = _wins;
 	losses = _losses;
 	timesPlayed = _timesPlayed;
-    //hello
 }
     string player::getName()
     {
