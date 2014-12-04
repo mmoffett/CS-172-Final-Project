@@ -67,14 +67,18 @@ void game::openFile()
 	}
 	string filename;
 
-	if (category == '1')
+	if (category == '1')//comment out hardcoding when not using Hannah's computer
 		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/Christmas.txt";
+	//filename="Christmas.txt";
 	else if (category == '2')
 		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/TrickWords.txt";
+	//filename="TrickWords.txt";
 	else if (category == '3')
 		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/Animals.txt";
+	//filename="Animals.txt";
 	else if (category == '4')
 		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/HarryPotter.txt";
+	//filename="HarryPotter.txt";
 	fin.open(filename);
 	if (!fin)
 	{
