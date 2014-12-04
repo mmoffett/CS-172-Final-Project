@@ -15,11 +15,13 @@ bool game::makeTurn()
            return checkWord(guessWord());
         char g=guessLetter();
         checkLetter(g);
-        cout << _found;
+    for(int i=0;i<_found.size();i++)
+        cout << current(i)<<" ";
         if (_found.find('_') == 0)
         {
             gamewon = true;
         }
+    cout << endl;
     
        return gamewon;
 }
@@ -28,6 +30,10 @@ string game::guessWord()
     string guessword;
     getline(cin, guessword);
     return guessword;
+}
+string game::current(int n)
+{
+    return _found.substr(n,1);
 }
 bool game::checkWord(string guessword)
 {
