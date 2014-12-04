@@ -16,7 +16,8 @@ bool game::makeTurn()
         char g=guessLetter();
         checkLetter(g);
     for(int i=0;i<_found.size();i++)
-        cout << current(i)<<" ";
+        cout<<current(i);
+    cout<<"\n";
         if (_found.find('_') == 0)
         {
             gamewon = true;
@@ -93,6 +94,7 @@ void game::openFile()
         return;
 	}
 	chooseWord(fin);
+    cout << "Your word:" << _found << endl;
 	fin.close();
 }
 void game::updatePlayers(bool won, int winner)
