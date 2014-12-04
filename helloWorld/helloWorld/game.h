@@ -19,7 +19,7 @@ private:
 	string _found;
     
 public:
-    bool makeTurn(player activePlayer, player *winner);
+    bool makeTurn();
     string guessWord();
     bool checkWord(string guessword);
 	void chooseWord(ifstream& fin);

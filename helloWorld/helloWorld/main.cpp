@@ -17,8 +17,7 @@ int main()
 		int numPlayers;
 		cin >> numPlayers;
 	    bool gamewon = false;
-		player *winner;
-
+		
 		for (int i = 0; i < numPlayers; i++)
 		{
 
@@ -33,7 +32,7 @@ int main()
 				for (int i = 0; i < numPlayers-1; i++)
 				{
 					cout << test->getPlayer(i).getName() << ", it is your turn";
-					gamewon = test->makeTurn(test->getPlayer(i), winner);
+					gamewon = test->makeTurn();
 					if (gamewon == true)
 					{
 						cout << "Congratulations " << test->getPlayer(i).getName() << ", You Won\n" << endl;
