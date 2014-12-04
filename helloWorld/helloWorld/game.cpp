@@ -13,8 +13,7 @@ bool game::makeTurn()
         cin >> k;
         if (k == 'y'||k=='Y')
            return checkWord(guessWord());
-        char g=guessLetter();
-        checkLetter(g);
+        checkLetter(guessLetter());
     for(int i=0;i<_found.size();i++)
         cout<<current(i)<<" ";
     cout<<endl;
@@ -28,7 +27,8 @@ bool game::makeTurn()
 string game::guessWord()
 {
     string guessword;
-    getline(cin, guessword);
+	cout << "What word would you like to guess?" << endl;
+	cin >> guessword;
     return guessword;
 }
 string game::current(int n)
