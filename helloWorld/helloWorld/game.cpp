@@ -60,6 +60,7 @@ char game::chooseCategory()
 }
 void game::openFile()
 {
+	ifstream fin;
 	char category = 0;
 	while (category != '1' && category != '2' && category != '3'&& category != '4')
 	{
@@ -134,6 +135,7 @@ void game::chooseWord(ifstream& fin)
 }
 void game::saveScores()
 {
+	ofstream fout;
         for (int i = 0; i < players.size(); i++)
         {
             player temp = players.at(i);
@@ -160,6 +162,7 @@ player game::getPlayer(int pos)
 }
 player game::createPlayer()
 {
+	ifstream fin;
 	cout << "Enter player name" << endl;
 	string name;
 	cin >> name;

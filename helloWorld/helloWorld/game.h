@@ -17,8 +17,6 @@ private:
     vector <player> players;
     int guesses;
 	string _found;
-	ifstream fin;
-	ofstream fout;
     
 public:
     bool makeTurn(player activePlayer, player *winner);
