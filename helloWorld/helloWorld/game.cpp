@@ -85,12 +85,19 @@ void game::openFile()
 	chooseWord(fin);
 	fin.close();
 }
-void game::updatePlayers()
+void game::updatePlayers(bool won, int winner)
 {
 	for (int i = 0; i < players.size(); i++)
 	{
 		player temp = players.at(i);
 		temp.upTimesPlayed();
+		if (won == true)
+		{
+			if (i = winner)
+				temp.upWins();
+			else
+				temp.upLosses();
+		}
 		//if won up wins, if lost, up losses
     }
 }

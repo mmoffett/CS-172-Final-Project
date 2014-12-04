@@ -35,12 +35,16 @@ int main()
 					cout << test->getPlayer(i).getName() << ", it is your turn";
 					gamewon = test->makeTurn(test->getPlayer(i), winner);
 					if (gamewon == true)
-						cout << "Congratulations "<<test->getPlayer(i).getName()<<", You Won\n" << endl;
+					{
+						cout << "Congratulations " << test->getPlayer(i).getName() << ", You Won\n" << endl;
+						temp.update(true, i);
+					}
 
 				}
 			}
 
 				cout << "GAME OVER \n Would you like to play again? (y/n) \n";
+				temp.update(false, 100);
 				cin >> replay;
 				if (replay != 'y' && replay != 'Y')
 				{

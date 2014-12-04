@@ -29,7 +29,7 @@ public:
     void checkLetter(char guessletter);
     char chooseCategory();
     void openFile();
-    void updatePlayers();
+    void updatePlayers(bool win, int winner);
     void saveScores();
 	void findLetterPos(char guessletter);
 	void addPlayer(player p);
