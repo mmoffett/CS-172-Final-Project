@@ -37,14 +37,14 @@ int main()
 					if (gamewon == true)
 					{
 						cout << "Congratulations " << test->getPlayer(i).getName() << ", You Won\n" << endl;
-						temp.update(true, i);
+						test->updatePlayers(true, i);
 					}
 
 				}
 			}
 
 				cout << "GAME OVER \n Would you like to play again? (y/n) \n";
-				temp.update(false, 100);
+				test->updatePlayers(false, 100);
 				cin >> replay;
 				if (replay != 'y' && replay != 'Y')
 				{
