@@ -17,7 +17,7 @@ bool game::makeTurn()
         checkLetter(g);
     for(int i=0;i<_found.size();i++)
         cout<<current(i)<<" ";
-    cout<<"\n";
+    cout<<endl;
         if (_found.find('_') == 0)
         {
             gamewon = true;
@@ -93,7 +93,10 @@ void game::openFile()
         return;
 	}
 	chooseWord(fin);
-    cout << "Your word:" << _found << endl;
+	cout << "Your word:";
+	for (int i = 0; i < _found.size();i++)
+		cout<< current(i)<<" ";
+	cout << endl;
 	fin.close();
 }
 void game::updatePlayers(bool won, int winner)
@@ -134,11 +137,9 @@ void game::chooseWord(ifstream& fin)
 	}
 	word = temp;
 	_found = "_";
-	cout << current(0) << " ";
     for (int i = 1; i < word.length(); i++)
 	{
 		_found += "_";
-		cout << current(i) << " ";
 	}
 }
 void game::saveScores()
