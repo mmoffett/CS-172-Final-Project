@@ -29,7 +29,7 @@ int main()
 			//int tries;
 			for (int tries = 0; tries < 6; tries++)
 			{
-				for (int i = 0; i < numPlayers-1; i++)
+				for (int i = 0; i < numPlayers; i++)
 				{
 					cout << test->getPlayer(i).getName() << ", it is your turn";
 					gamewon = test->makeTurn();
@@ -38,6 +38,8 @@ int main()
 						cout << "Congratulations " << test->getPlayer(i).getName() << ", You Won\n" << endl;
 						test->updatePlayers(true, i);
 					}
+					else
+						cout << "You have " << 6 - tries << " tries left" << endl;
 
 				}
 			}
