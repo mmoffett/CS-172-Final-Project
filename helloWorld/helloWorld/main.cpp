@@ -14,7 +14,7 @@ int main()
 		game *test = new game();
 
 		int numPlayers = 0;
-		while (numPlayers > 0 && numPlayers < 6)
+		while (numPlayers <= 0 || numPlayers < 6)
 		{
 			cout << "How many players are there? " << endl;
 			cin >> numPlayers;
@@ -29,8 +29,8 @@ int main()
 		test->openFile();//word is decided here
 		while (gamewon == false)
 		{
-			//int tries;
-			for (int tries = 0; tries < (6/numPlayers); tries++)
+			int tries==6;
+			while (tries>0)
 			{
 				for (int i = 0; i < numPlayers; i++)
 				{
@@ -42,7 +42,10 @@ int main()
 						test->updatePlayers(true, i);
 					}
 					else
-						cout << "You have " << 6 - tries << " tries left" << endl;
+					{
+						tries--;
+						cout << "You have " << tries << " tries left" << endl;
+					}
 
 				}
 			}

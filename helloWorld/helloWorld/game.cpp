@@ -17,7 +17,7 @@ bool game::makeTurn()
     for(int i=0;i<_found.size();i++)
         cout<<current(i)<<" ";
     cout<<endl;
-        if (_found.find('_') == 0)
+        if (_found.find('_') == -1)
         {
             gamewon = true;
         }
