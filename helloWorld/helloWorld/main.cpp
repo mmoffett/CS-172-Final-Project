@@ -13,9 +13,12 @@ int main()
     {
 		game *test = new game();
 
-		cout << "How many players are there? " << endl;
-		int numPlayers;
-		cin >> numPlayers;
+		int numPlayers = 0;
+		while (numPlayers > 0 && numPlayers < 6)
+		{
+			cout << "How many players are there? " << endl;
+			cin >> numPlayers;
+		}
 	    bool gamewon = false;
 		
 		for (int i = 0; i < numPlayers; i++)
@@ -27,7 +30,7 @@ int main()
 		while (gamewon == false)
 		{
 			//int tries;
-			for (int tries = 0; tries < 6; tries++)
+			for (int tries = 0; tries < (6/numPlayers); tries++)
 			{
 				for (int i = 0; i < numPlayers; i++)
 				{
