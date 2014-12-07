@@ -27,34 +27,8 @@ int main()
 			test->addPlayer(test->createPlayer());//newP will be filled with diff contents
 		}
 		test->openFile();//word is decided here
-		while (gamewon == false)
-		{
-			int tries==6;
-			while (tries>0)
-			{
-				for (int i = 0; i < numPlayers; i++)
-				{
-					bool correctGuess;
-					cout << test->getPlayer(i).getName() << ", it is your turn";
-					correctGuess = test->makeTurn();
-					gamewon = test->winGame();
-					if (gamewon == true)
-					{
-						cout << "Congratulations " << test->getPlayer(i).getName() << ", You Won\n" << endl;
-						test->updatePlayers(true, i);
-						tries = 0;
-					}
-					else if (correctGuess == true)
-					{
-						cout << "Good Job, keep trying" << endl;
-					}
-					else
-					{
-						tries--;
-						cout << "You have " << tries << " tries left" << endl;
-					}
-				}
-			}
+		bool gamewon == false;
+		test->play();
 
 				cout << "GAME OVER \n Would you like to play again? (y/n) \n";
 				test->updatePlayers(false, 100);

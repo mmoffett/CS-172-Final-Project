@@ -209,3 +209,35 @@ player game::createPlayer()
 	}
 	return nextPlayer;
 }
+
+void game::play()
+{
+	bool gamewon = false;
+	int tries = 6;
+	while (tries > 0)
+	{
+		for (int i = 0; i < players.size(); i++)
+		{
+			bool correctGuess;
+			cout << getPlayer(i).getName() << ", it is your turn";
+			correctGuess = makeTurn();
+			gamewon = winGame();
+			if (gamewon == true)
+			{
+				cout << "Congratulations " << getPlayer(i).getName() << ", You Won\n" << endl;
+				updatePlayers(true, i);
+				tries = 0;
+				return;
+			}
+			else if (correctGuess == true)
+			{
+				cout << "Good Job, keep trying" << endl;
+			}
+			else
+			{
+				tries--;
+				cout << "You have " << tries << " tries left" << endl;
+			}
+		}
+	}
+}
