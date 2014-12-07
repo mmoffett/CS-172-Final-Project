@@ -35,7 +35,7 @@ public:
 	void addPlayer(player p);
 	player getPlayer(int pos);
 	player createPlayer();
-	bool play();
+	void play();
     
 };
 

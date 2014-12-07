@@ -29,10 +29,9 @@ int main()
 		bool gameDone = false;
 		while (gameDone == false)
 		{
-			bool gameWon=test->play();
+			test->play();
 
 			cout << "GAME OVER \nWould you like to play again? (y/n) \n";
-			test->updatePlayers(gameWon, 100);
 			cin >> replay;
 			if (replay != 'y' && replay != 'Y')
 			{

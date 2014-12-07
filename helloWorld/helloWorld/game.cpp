@@ -213,7 +213,7 @@ player game::createPlayer()
 	return nextPlayer;
 }
 
-bool game::play()
+void game::play()
 {
 	openFile();
 	bool gamewon = false;
@@ -231,7 +231,7 @@ bool game::play()
 				cout << "Congratulations " << getPlayer(i).getName() << ", You Won\n" << endl;
 				updatePlayers(true, i);
 				tries = 0;
-				return true;
+				return;
 			}
 			else if (correctGuess == true)
 			{
@@ -244,7 +244,7 @@ bool game::play()
 			}
 			if (tries == 0)
 			{
-				return false;
+				updatePlayers(false,-1);
 			}
 		}
 	}
