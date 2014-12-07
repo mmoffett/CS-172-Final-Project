@@ -30,6 +30,7 @@ public:
     void openFile();
     void updatePlayers(bool win, int winner);
     void saveScores();
+	bool winGame();
 	void findLetterPos(char guessletter);
 	void addPlayer(player p);
 	player getPlayer(int pos);

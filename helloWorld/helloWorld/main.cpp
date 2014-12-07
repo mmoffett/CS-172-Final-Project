@@ -34,19 +34,25 @@ int main()
 			{
 				for (int i = 0; i < numPlayers; i++)
 				{
+					bool correctGuess;
 					cout << test->getPlayer(i).getName() << ", it is your turn";
-					gamewon = test->makeTurn();
+					correctGuess = test->makeTurn();
+					gamewon = test->winGame();
 					if (gamewon == true)
 					{
 						cout << "Congratulations " << test->getPlayer(i).getName() << ", You Won\n" << endl;
 						test->updatePlayers(true, i);
+						tries = 0;
+					}
+					else if (correctGuess == true)
+					{
+						cout << "Good Job, keep trying" << endl;
 					}
 					else
 					{
 						tries--;
 						cout << "You have " << tries << " tries left" << endl;
 					}
-
 				}
 			}
 

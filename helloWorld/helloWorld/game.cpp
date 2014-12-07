@@ -6,23 +6,29 @@ void game::addPlayer(player p)
 }
 bool game::makeTurn()
 {
-    bool gamewon = false;
-    
-        cout << " would you like to guess the word? (y/n)" << endl;
-        char k;
-        cin >> k;
-        if (k == 'y'||k=='Y')
-           return checkWord(guessWord());
-        checkLetter(guessLetter());
-    for(int i=0;i<_found.size();i++)
-        cout<<current(i)<<" ";
-    cout<<endl;
-        if (_found.find('_') == -1)
-        {
-            gamewon = true;
-        }
-    
-       return gamewon;
+	bool gamewon = false;
+
+	cout << " would you like to guess the word? (y/n)" << endl;
+	char k;
+	cin >> k;
+	if (k == 'y' || k == 'Y')
+		return checkWord(guessWord());
+	char guessletter = guessLetter();
+	checkLetter(guessletter);
+	for (int i = 0; i<_found.size(); i++)
+		cout << current(i) << " ";
+	cout << "\n";
+	return (_found.find(guessletter) != -1);
+}
+bool game::winGame()
+{
+	bool gamewon = false;
+	if (_found.find('_') == -1)
+	{
+		gamewon = true;
+	}
+
+	return gamewon;
 }
 string game::guessWord()
 {
