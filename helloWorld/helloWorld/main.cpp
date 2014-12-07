@@ -26,23 +26,26 @@ int main()
 
 			test->addPlayer(test->createPlayer());//newP will be filled with diff contents
 		}
-		bool gamewon == false;
-		test->play();
+		bool gamewon = false;
+		while (gamewon == false)
+		{
+			test->play();
 
-				cout << "GAME OVER \n Would you like to play again? (y/n) \n";
-				test->updatePlayers(false, 100);
-				cin >> replay;
-				if (replay != 'y' && replay != 'Y')
+			cout << "GAME OVER \nWould you like to play again? (y/n) \n";
+			test->updatePlayers(false, 100);
+			cin >> replay;
+			if (replay != 'y' && replay != 'Y')
+			{
+				test->saveScores();
+				cout << "Goodbye!";
+				for (int i = 0; i < numPlayers; i++)
 				{
-					test->saveScores();
-					cout << "Goodbye!";
-					for (int i = 0; i < numPlayers; i++)
-					{
-						cout << test->getPlayer(i).getName() << " has an average score of " << test->getPlayer(i).getAverage();
-					}
+					cout << test->getPlayer(i).getName() << " has an average score of " << test->getPlayer(i).getAverage();
 				}
-				else
-					gamewon = false;
+			}
+			else
+				gamewon = false;
+		}
 
 		}
 	}
