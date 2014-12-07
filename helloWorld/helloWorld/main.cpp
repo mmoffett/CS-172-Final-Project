@@ -8,10 +8,7 @@ using namespace std;
 int main()
 {
     
-    char replay = 'y';
-    while (replay == 'y' || replay == 'Y')
-    {
-		game *test = new game();
+    	game *test = new game();
 
 		int numPlayers = 0;
 		while (numPlayers <= 0 || numPlayers < 6)
@@ -32,6 +29,7 @@ int main()
 			test->play();
 
 			cout << "GAME OVER \nWould you like to play again? (y/n) \n";
+			char replay;
 			cin >> replay;
 			if (replay != 'y' && replay != 'Y')
 			{
@@ -39,17 +37,12 @@ int main()
 				cout << "Goodbye!";
 				for (int i = 0; i < numPlayers; i++)
 				{
-					cout << test->getPlayer(i).getName() << " has an average score of " << test->getPlayer(i).getAverage();
+					cout << test->getPlayer(i).getName() << " has an average score of " << test->getPlayer(i).getAverage()<<endl;
 				}
+				gameDone = true;
 			}
-			else
-				gameDone = false;
-		}
-
 		}
 	}
-
-
 }
 
 

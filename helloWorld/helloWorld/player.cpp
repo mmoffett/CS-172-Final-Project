@@ -30,7 +30,10 @@ player::player(string _name, int _wins, int _losses, int _timesPlayed)
     }
     double player::getAverage()
     {
-        return wins / (wins + losses);
+		if ((wins + losses) > 0)
+			return wins / (wins + losses);
+		else
+			return 0;
     }
     int player::getTimesPlayed()
     {
