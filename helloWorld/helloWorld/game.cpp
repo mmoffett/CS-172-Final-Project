@@ -43,8 +43,11 @@ string game::current(int n)
 }
 bool game::checkWord(string guessword)
 {
-    if (word == guessword)
-        return true;
+	if (word == guessword)
+	{
+		_found = word;
+		return true;
+	}
     else 
 		return false;
 }
