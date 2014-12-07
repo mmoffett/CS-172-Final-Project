@@ -26,7 +26,6 @@ int main()
 
 			test->addPlayer(test->createPlayer());//newP will be filled with diff contents
 		}
-		test->openFile();//word is decided here
 		bool gamewon == false;
 		test->play();
 

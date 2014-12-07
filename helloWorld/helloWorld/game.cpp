@@ -212,6 +212,7 @@ player game::createPlayer()
 
 void game::play()
 {
+	openFile();
 	bool gamewon = false;
 	int tries = 6;
 	while (tries > 0)
