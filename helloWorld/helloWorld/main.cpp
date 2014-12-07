@@ -26,13 +26,13 @@ int main()
 
 			test->addPlayer(test->createPlayer());//newP will be filled with diff contents
 		}
-		bool gamewon = false;
-		while (gamewon == false)
+		bool gameDone = false;
+		while (gameDone == false)
 		{
-			test->play();
+			bool gameWon=test->play();
 
 			cout << "GAME OVER \nWould you like to play again? (y/n) \n";
-			test->updatePlayers(false, 100);
+			test->updatePlayers(gameWon, 100);
 			cin >> replay;
 			if (replay != 'y' && replay != 'Y')
 			{
@@ -44,7 +44,7 @@ int main()
 				}
 			}
 			else
-				gamewon = false;
+				gameDone = false;
 		}
 
 		}
