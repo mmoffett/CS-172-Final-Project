@@ -192,3 +192,26 @@ void player::createPlayer()
 		//if file exists with this player, read it and make player
 	}
 }
+
+/*
+* Saves the scores of the player into the player file
+*/
+void player::saveScore()
+{
+	ofstream fout;
+	string filename = name;
+	filename += ".txt";
+	fout.open(filename);
+	if (fout.fail())
+	{
+		cout << "can't open file" << endl;
+		return;
+	}
+	fout << "Information for Newest Data: Player Name, Wins, Losses, Times Played, Average\n";
+	fout << name << endl;
+	fout << wins << endl;
+	fout << losses << endl;
+	fout << timesPlayed << endl;
+	fout << getAverage() << endl;
+	fout.close();
+}

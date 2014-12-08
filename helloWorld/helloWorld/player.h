@@ -35,6 +35,7 @@ public:
 	void upLosses();
 	void upTimesPlayed();
 	void createPlayer();
+	void saveScore();
 
 };
 

@@ -284,24 +284,9 @@ void game::play()
 */
 void game::saveScores()
 {
-	ofstream fout;
 	for (int i = 0; i < players.size(); i++)
 	{
 		player temp = players.at(i);
-		string filename = temp.getName();
-		filename += ".txt";
-		fout.open(filename);
-		if (fout.fail())
-		{
-			cout << "can't open file" << endl;
-			return;
-		}
-		fout << "Information for Newest Data: Player Name, Wins, Losses, Times Played, Average\n";
-		fout << temp.getName() << endl;
-		fout << temp.getWins() << endl;
-		fout << temp.getLosses() << endl;
-		fout << temp.getTimesPlayed() << endl;
-		fout << temp.getAverage() << endl;
-		fout.close();
+		temp.saveScore();
 	}
 }
