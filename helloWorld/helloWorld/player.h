@@ -17,6 +17,9 @@ private:
     int wins;
     int losses;
     int timesPlayed;
+	void setWinCount(int win);
+	void setLoss(int loss);
+	void setTimesPlayed(int played);
     
 public:
 	player();
@@ -31,9 +34,6 @@ public:
 	void upWins();
 	void upLosses();
 	void upTimesPlayed();
-    void setWinCount(int win);
-    void setLoss(int loss);
-    void setTimesPlayed(int played);
 	void createPlayer();
 
 };
