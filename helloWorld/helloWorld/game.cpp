@@ -1,9 +1,20 @@
 #include "game.h"
 
+/*
+* Adds a player to the vector players.
+*
+* @param  p		player we are adding to the players vector
+*/
 void game::addPlayer(player p)
 {
 	players.push_back(p);
 }
+
+/*
+* Completes one turn in the running of the game.
+*
+*@ return		if the guess that the player made during this turn was correct(true) or not(false)
+*/
 bool game::makeTurn()
 {
 	bool gamewon = false;
@@ -20,6 +31,12 @@ bool game::makeTurn()
 	cout << "\n";
 	return (_found.find(guessletter) != -1);
 }
+
+/*
+* Checks if the game game is won by looking at if there are unguessed letters left.
+*
+* @return     if there are still unguessed letters(false) or not(true)
+*/
 bool game::winGame()
 {
 	bool gamewon = false;
@@ -30,6 +47,12 @@ bool game::winGame()
 
 	return gamewon;
 }
+
+/*
+* Gets user input for their guess word.
+*
+* @return     the user's guess
+*/
 string game::guessWord()
 {
     string guessword;
@@ -37,10 +60,24 @@ string game::guessWord()
 	cin >> guessword;
     return guessword;
 }
+
+/*
+* Finds the current letter representation at position in the _found string.
+*
+* @param  n		what position to check at
+* @return     the string of this one letter
+*/
 string game::current(int n)
 {
     return _found.substr(n,1);
 }
+
+/*
+* Checks if the word the user guessed is the hangman word.
+*
+* @param  guessword		the user's guess
+* @return     if the word is the word
+*/
 bool game::checkWord(string guessword)
 {
 	if (word == guessword)
@@ -51,6 +88,12 @@ bool game::checkWord(string guessword)
     else 
 		return false;
 }
+
+/*
+* Gets user's input for their guess letter.
+*
+* @return     the char letter they guess
+*/
 char game::guessLetter()
 {
     cout << "enter a letter: ";
@@ -58,6 +101,12 @@ char game::guessLetter()
     cin >> guessletter;
     return guessletter;  
 }
+
+/*
+* Checks if the letter the user guessed is in the hangman word and if it is, calls the findLetterPos function.
+*
+* @param  guessletter	the user's guess
+*/
 void game::checkLetter(char guessletter)
 {
 	if (word.find(guessletter) != -1)
@@ -65,6 +114,12 @@ void game::checkLetter(char guessletter)
         findLetterPos(guessletter);
 	}
 }
+
+/*
+* Asks the user to choose the catagory.
+*
+* @return     the char number of which category the user chooses
+*/
 char game::chooseCategory()
 {
     char category;
@@ -72,6 +127,10 @@ char game::chooseCategory()
     cin >> category;
 	return category;
 }
+
+/*
+* Opens the file for the category of words.
+*/
 void game::openFile()
 {
 	ifstream fin;
@@ -108,6 +167,13 @@ void game::openFile()
 	cout << endl;
 	fin.close();
 }
+
+/*
+* Update's the player's wins/losses/timesPlayed.
+*
+* @param  won	if the game was won
+* @param winner	if so, who won
+*/
 void game::updatePlayers(bool won, int winner)
 {
 	for (int i = 0; i < players.size(); i++)
@@ -120,10 +186,14 @@ void game::updatePlayers(bool won, int winner)
 			else
 				players.at(i).upLosses();
 		}
-		//if won up wins, if lost, up losses
     }
 }
 
+/*
+* Finds the position the letter is at in the word and puts that letter into _found.
+*
+* @param  guessLetter	the letter to enter
+*/
 void game::findLetterPos(char guessLetter)
 {
     for (int i = 0; i < word.length();i++)
@@ -134,6 +204,12 @@ void game::findLetterPos(char guessLetter)
 		}
 	}
 }
+
+/*
+* Chooses the word for the game.
+*
+* @param  fin	the file stream that the word is read from
+*/
 void game::chooseWord(ifstream& fin)
 {
 	string temp;
@@ -150,6 +226,10 @@ void game::chooseWord(ifstream& fin)
 		_found += "_";
 	}
 }
+
+/*
+* Updates the user's statistics in the ongoing file or creates a new file for the user.
+*/
 void game::saveScores()
 {
 	ofstream fout;
@@ -173,10 +253,22 @@ void game::saveScores()
             fout.close();
         }
 }
+
+/*
+* Returns the player at a given position
+*
+* @param  pos  which player in the vector
+* @return     the player
+*/
 player game::getPlayer(int pos)
 {
 	return players[pos];
 }
+
+/*
+* Adds a player to the player vector after reading any existing file for the player's stats.
+* @return     the player that was just made
+*/
 player game::createPlayer()
 {
 	ifstream fin;
@@ -194,7 +286,7 @@ player game::createPlayer()
 	else
 	{
 		string random;
-		getline(fin, random);//this is the intro line(we could move that line to the end so that it doesn't butt in here)
+		getline(fin, random);//this is the intro line
 		getline(fin, random);//this is the name which we already have
 		string num;
 		getline(fin, num);
@@ -207,11 +299,14 @@ player game::createPlayer()
         nextPlayer.setLoss(loss);
         nextPlayer.setTimesPlayed(played);
         cout << "Welcome, player, "<< name<<"! \nYou currently have "<<win<<" wins, "<<loss<<" losses, and "<<played<<" games played" << endl;
-		//if file exists with this player, read it and make player//done? does this work?
+		//if file exists with this player, read it and make player
 	}
 	return nextPlayer;
 }
 
+/*
+* Runs the entire game.
+*/
 void game::play()
 {
 	openFile();
