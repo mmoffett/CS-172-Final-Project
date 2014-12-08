@@ -36,6 +36,7 @@ public:
 	void updatePlayers(bool win, int winner);
 	void play();
 	void saveScores();
+    void ascii(int i);
     
 };
 

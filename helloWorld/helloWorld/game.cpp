@@ -237,6 +237,24 @@ void game::updatePlayers(bool won, int winner)
 		}
 	}
 }
+// outputs ascii art of game progress
+void ascii(int i)
+{
+    if (i <= 6)
+        cout << " _________     \n";
+    if (i <= 5)
+        cout << " _________     \n";
+    if (i <= 4)
+        cout << "|         |    \n";
+    if (i <= 3)
+        cout << "|         0    \n";
+    if (i <= 2)
+        cout << "|        /|\\  \n";
+    if (i <= 1)
+        cout << "|        / \\  \n";
+    if (i <= 0)
+        cout << "|              \n|              \nGAME OVER";
+}
 
 /*
 * Runs the entire game.
@@ -270,6 +288,7 @@ void game::play()
 				tries--;
 				cout << "You have " << tries << " tries left" << endl;
 			}
+            game::ascii(tries);
 			if (tries == 0)
 			{
 				updatePlayers(false,-1);//update with no winner
