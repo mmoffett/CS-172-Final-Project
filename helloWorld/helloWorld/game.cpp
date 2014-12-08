@@ -112,14 +112,13 @@ void game::updatePlayers(bool won, int winner)
 {
 	for (int i = 0; i < players.size(); i++)
 	{
-		player temp = players.at(i);
-		temp.upTimesPlayed();
+		players.at(i).upTimesPlayed();
 		if (won == true)
 		{
 			if (i == winner)
-				temp.upWins();
+				players.at(i).upWins();
 			else
-				temp.upLosses();
+				players.at(i).upLosses();
 		}
 		//if won up wins, if lost, up losses
     }
