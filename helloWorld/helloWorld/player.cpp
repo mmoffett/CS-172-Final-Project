@@ -35,115 +35,115 @@ player::player(string _name, int _wins, int _losses, int _timesPlayed)
 *
 * @return     the name
 */
-    string player::getName()
-    {
-        return name;
-    }
+string player::getName()
+{
+	return name;
+}
 
 /*
 * Returns how many wins the player has.
 *
 * @return     the number of wins
 */
-    int player::getWins()
-    {
-        return wins;
-    }
+int player::getWins()
+{
+	return wins;
+}
 
 /*
 * Returns how many losses the player has.
 *
 * @return     the number of losses
 */
-    int player::getLosses()
-    {
-        return losses;
-    }
+int player::getLosses()
+{
+	return losses;
+}
 
 /*
 * Returns the player's average.
 *
 * @return     the average
 */
-    double player::getAverage()
-    {
-		double gamesWon = wins + losses;
-		if ((gamesWon) > 0)
-			return wins / (wins + losses);
-		else
-			return 0;
-    }
+double player::getAverage()
+{
+	double gamesWon = wins + losses;
+	if ((gamesWon) > 0)
+		return wins / (wins + losses);
+	else
+		return 0;
+}
 
 /*
 * Returns how many times the player has played.
 *
 * @return     the number of games played
 */
-    int player::getTimesPlayed()
-    {
-        return timesPlayed;
-    }
+int player::getTimesPlayed()
+{
+	return timesPlayed;
+}
 
 /*
 * Set's the players name.
 *
 * @param	_name     the player's name
 */
-    void player::setName(string _name)
-    {
-        name = _name;
-    }
+void player::setName(string _name)
+{
+	name = _name;
+}
 
 /*
 * Increases the player's number of wins.
 */
-	void player::upWins()
-	{
-		wins++;
-	}
+void player::upWins()
+{
+	wins++;
+}
 
 /*
 * Increases the player's number of losses.
 */
-	void player::upLosses()
-	{
-		losses++;
-	}
+void player::upLosses()
+{
+	losses++;
+}
 
 /*
 * Increases the player's number of games played.
 */
-	void player::upTimesPlayed()
-	{
-		timesPlayed++;
-	}
+void player::upTimesPlayed()
+{
+	timesPlayed++;
+}
 
 /*
 * Sets the player's win count.
 * 
 * @param  win	the number of wins
 */
-    void player::setWinCount(int win)
-    {
-        wins = win;
-    }
+void player::setWinCount(int win)
+{
+	wins = win;
+}
 
 /*
 * Sets the player's loss count.
 * 
 * @param  loss	the number of losses
 */
-    void player::setLoss(int loss)
-    {
-        losses = loss;
-    }
+void player::setLoss(int loss)
+{
+	losses = loss;
+}
 
 /*
 * Sets the player's games played.
 * 
 * @param  played	the games played
 */
-    void player::setTimesPlayed(int played)
-    {
-        timesPlayed = played;
-    }
+void player::setTimesPlayed(int played)
+{
+	timesPlayed = played;
+}
