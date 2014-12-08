@@ -11,7 +11,7 @@ int main()
     	game *test = new game();
 
 		int numPlayers = 0;
-		while (numPlayers <= 0 || numPlayers < 6)
+		while (numPlayers <= 0 || numPlayers > 6)
 		{
 			cout << "How many players are there? " << endl;
 			cin >> numPlayers;
@@ -20,8 +20,9 @@ int main()
 		
 		for (int i = 0; i < numPlayers; i++)
 		{
-
-			test->addPlayer(test->createPlayer());//newP will be filled with diff contents
+			player temp = new* player();
+			temp.createPlayer();
+			test->addPlayer(temp);//newP will be filled with diff contents
 		}
 		bool gameDone = false;
 		while (gameDone == false)
@@ -42,7 +43,10 @@ int main()
 				gameDone = true;
 			}
 		}
+
+		cout << "Press any key to continue: ";
+		char end;
+		cin >> end;
 	}
-}
 
 

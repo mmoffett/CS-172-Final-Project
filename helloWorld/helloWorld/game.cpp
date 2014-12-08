@@ -21,45 +21,6 @@ player game::getPlayer(int pos)
 	return players[pos];
 }
 
-/*
-* Adds a player to the player vector after reading any existing file for the player's stats.
-* @return     the player that was just made
-*/
-player game::createPlayer()
-{
-	ifstream fin;
-	cout << "Enter player name" << endl;
-	string name;
-	cin >> name;
-	string filename = name;
-	filename += ".txt";
-	fin.open(filename);
-	player nextPlayer = (*new player(name));//makes empty player with name
-	if (fin.fail())
-	{
-		cout << "Welcome, new player, " << name << "! \nYou currently have 0 wins, 0 losses, and no games played" << endl;
-	}
-	else
-	{
-		string random;
-		getline(fin, random);//this is the intro line
-		getline(fin, random);//this is the name which we already have
-		string num;
-		getline(fin, num);
-		int win = atoi(num.c_str());
-		getline(fin, num);
-		int loss = atoi(num.c_str());
-		getline(fin, num);
-		int played = atoi(num.c_str());
-		nextPlayer.setWinCount(win);
-		nextPlayer.setLoss(loss);
-		nextPlayer.setTimesPlayed(played);
-		cout << "Welcome, player, " << name << "! \nYou currently have " << win << " wins, " << loss << " losses, and " << played << " games played" << endl;
-		//if file exists with this player, read it and make player
-	}
-	return nextPlayer;
-}
-
 char game::chooseCategory()
 {
 	char category;

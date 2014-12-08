@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 #ifndef hangman_player_h
 #define hangman_player_h
@@ -18,6 +19,7 @@ private:
     int timesPlayed;
     
 public:
+	player();
 	player(string _name);
 	player(string _name, int _wins, int _losses, int _timesPlayed);
     string getName();
@@ -32,6 +34,7 @@ public:
     void setWinCount(int win);
     void setLoss(int loss);
     void setTimesPlayed(int played);
+	void createPlayer();
 
 };
 

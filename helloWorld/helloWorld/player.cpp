@@ -2,6 +2,15 @@
 #include "player.h"
 
 /*
+* A default constructor for the player class.
+*/
+player::player()
+{
+	wins = 0;
+	losses = 0;
+	timesPlayed = 0;
+}
+/*
 * A constructor for the player class.
 *
 * @param  _name		the player's name
@@ -69,7 +78,7 @@ double player::getAverage()
 {
 	double gamesWon = wins + losses;
 	if ((gamesWon) > 0)
-		return wins / (wins + losses);
+		return wins / gamesWon;
 	else
 		return 0;
 }
@@ -146,4 +155,40 @@ void player::setLoss(int loss)
 void player::setTimesPlayed(int played)
 {
 	timesPlayed = played;
+}
+
+/*
+* Adds a player to the player vector after reading any existing file for the player's stats.
+* @return     the player that was just made
+*/
+void player::createPlayer()
+{
+	ifstream fin;
+	cout << "Enter player name" << endl;
+	cin >> name;
+	string filename = name;
+	filename += ".txt";
+	fin.open(filename);
+	if (fin.fail())
+	{
+		cout << "Welcome, new player, " << name << "! \nYou currently have 0 wins, 0 losses, and no games played" << endl;
+		timesPlayed = 0;
+		wins = 0;
+		losses = 0;
+	}
+	else
+	{
+		string random;
+		getline(fin, random);//this is the intro line
+		getline(fin, random);//this is the name which we already have
+		string num;
+		getline(fin, num);
+		wins = atoi(num.c_str());
+		getline(fin, num);
+		losses = atoi(num.c_str());
+		getline(fin, num);
+		timesPlayed = atoi(num.c_str());
+		cout << "Welcome, player, " << name << "! \nYou currently have " << wins << " wins, " << losses << " losses, and " << timesPlayed << " games played" << endl;
+		//if file exists with this player, read it and make player
+	}
 }
