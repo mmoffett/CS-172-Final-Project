@@ -167,7 +167,7 @@ void player::createPlayer()
 	cout << "Enter player name" << endl;
 	cin >> name;
 	string filename = name;
-	filename += ".txt";
+	filename += ".txt";//make the filename
 	fin.open(filename);
 	if (fin.fail())
 	{
@@ -175,6 +175,7 @@ void player::createPlayer()
 		timesPlayed = 0;
 		wins = 0;
 		losses = 0;
+		//if this is a new player, set defaults
 	}
 	else
 	{
@@ -199,7 +200,7 @@ void player::saveScore()
 	ofstream fout;
 	string filename = name;
 	filename += ".txt";
-	fout.open(filename);
+	fout.open(filename);//make or open file
 	if (fout.fail())
 	{
 		cout << "can't open file" << endl;
@@ -209,7 +210,7 @@ void player::saveScore()
 	fout << losses << endl;
 	fout << timesPlayed << endl;
 	fout << getAverage() << endl;
-	fout << name << endl;
+	fout << name << endl;//give the file all of the data
 	fout << "Information for Newest Data: Player Name, Wins, Losses, Times Played, Average\n";
 	fout.close();
 }

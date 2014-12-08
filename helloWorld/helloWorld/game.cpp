@@ -47,7 +47,7 @@ void game::openFile()
 	}
 	string filename;
 
-	if (category == '1')//comment out hardcoding when not using Hannah's computer
+	if (category == '1')//comment out hardcoding when not using Hannah's computer and use other filename
 		filename = "/Users/hannahcobb/Desktop/School/2014.3Fall/ComputerScience2/CS-172-Final-Project/helloWorld/helloWorld/Christmas.txt";
 	//filename="Christmas.txt";
 	else if (category == '2')
@@ -83,8 +83,8 @@ void game::chooseWord(ifstream& fin)
 {
 	string temp;
 	srand(time(NULL));
-	int x = rand() % 39;
-	for (int i = 0; i < x; i++)
+	int x = rand() % 39;//choose a number between 0 and 39
+	for (int i = 0; i < x; i++)//go until you get to this number and set it to temp
 	{
 		fin >> temp;
 	}
@@ -92,7 +92,7 @@ void game::chooseWord(ifstream& fin)
 	_found = "_";
 	for (int i = 1; i < word.length(); i++)
 	{
-		_found += "_";
+		_found += "_";//make the blank _found to display
 	}
 }
 
@@ -108,11 +108,11 @@ bool game::makeTurn()
 	cout << " would you like to guess the word? (y/n)" << endl;
 	char k;
 	cin >> k;
-	if (k == 'y' || k == 'Y')
+	if (k == 'y' || k == 'Y')//if they want to guess the word, let them guess and check if it is correct and return
 		return checkWord(guessWord());
 	char guessletter = guessLetter();
 	checkLetter(guessletter);
-	for (int i = 0; i<_found.size(); i++)
+	for (int i = 0; i<_found.size(); i++)//return the newest version of guessed letters
 		cout << current(i) << " ";
 	cout << "\n";
 	return (_found.find(guessletter) != -1);
@@ -231,9 +231,9 @@ void game::updatePlayers(bool won, int winner)
 		players.at(i).upTimesPlayed();
 		if (won == true)
 		{
-			if (i == winner)
+			if (i == winner)//if it is the winner, give them the win
 				players.at(i).upWins();
-			else
+			else//if it is not the winner, give them loss
 				players.at(i).upLosses();
 		}
 	}
@@ -255,10 +255,10 @@ void game::play()
 			cout << getPlayer(i).getName() << ", it is your turn";
 			correctGuess = makeTurn();
 			gamewon = winGame();
-			if (gamewon == true)
+			if (gamewon == true)//if player won
 			{
 				cout << "Congratulations " << getPlayer(i).getName() << ", You Won\n" << endl;
-				updatePlayers(true, i);
+				updatePlayers(true, i);//update with this player as winner
 				tries = 0;
 				return;
 			}
@@ -273,7 +273,8 @@ void game::play()
 			}
 			if (tries == 0)
 			{
-				updatePlayers(false,-1);
+				updatePlayers(false,-1);//update with no winner
+				return;
 			}
 		}
 	}
