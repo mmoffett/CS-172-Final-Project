@@ -63,7 +63,6 @@ void game::openFile()
 	if (!fin)
 	{
 		cout << "can't open file" << endl;
-		// We should have something here that ends the program if the file can't be opened.
 		return;
 	}
 	chooseWord(fin);

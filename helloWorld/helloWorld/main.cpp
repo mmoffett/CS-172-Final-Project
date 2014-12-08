@@ -20,7 +20,7 @@ int main()
 		
 	for (int i = 0; i < numPlayers; i++)
 	{
-		player temp = new* player();
+		player temp = *new player();
 		temp.createPlayer();
 		test->addPlayer(temp);
 	}//fills the game's vector of players
