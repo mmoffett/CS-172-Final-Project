@@ -179,8 +179,6 @@ void player::createPlayer()
 	else
 	{
 		string random;
-		getline(fin, random);//this is the intro line
-		getline(fin, random);//this is the name which we already have
 		string num;
 		getline(fin, num);
 		wins = atoi(num.c_str());
@@ -207,11 +205,11 @@ void player::saveScore()
 		cout << "can't open file" << endl;
 		return;
 	}
-	fout << "Information for Newest Data: Player Name, Wins, Losses, Times Played, Average\n";
-	fout << name << endl;
 	fout << wins << endl;
 	fout << losses << endl;
 	fout << timesPlayed << endl;
 	fout << getAverage() << endl;
+	fout << name << endl;
+	fout << "Information for Newest Data: Player Name, Wins, Losses, Times Played, Average\n";
 	fout.close();
 }
