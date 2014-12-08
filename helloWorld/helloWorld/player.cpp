@@ -211,6 +211,6 @@ void player::saveScore()
 	fout << timesPlayed << endl;
 	fout << getAverage() << endl;
 	fout << name << endl;//give the file all of the data
-	fout << "Information for Newest Data: Player Name, Wins, Losses, Times Played, Average\n";
+	fout << "Information for Newest Data: Wins, Losses, Times Played, Average, Player Name\n";
 	fout.close();
 }
