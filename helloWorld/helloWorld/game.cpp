@@ -21,6 +21,11 @@ player game::getPlayer(int pos)
 	return players[pos];
 }
 
+/*
+* Asks the user to choose the catagory.
+*
+* @return     the char number of which category the user chooses
+*/
 char game::chooseCategory()
 {
 	char category;
@@ -196,11 +201,6 @@ string game::current(int n)
 	return _found.substr(n, 1);
 }
 
-/*
-* Asks the user to choose the catagory.
-*
-* @return     the char number of which category the user chooses
-*/
 
 /*
 * Finds the position the letter is at in the word and puts that letter into _found.
