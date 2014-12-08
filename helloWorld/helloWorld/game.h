@@ -17,25 +17,25 @@ private:
     vector <player> players;
     int guesses;
 	string _found;
-    string current(int n);
+	bool checkWord(string guessword);
     void checkLetter(char guessletter);
-    bool checkWord(string guessword);
+	string current(int n);
+	void findLetterPos(char guessletter);
     
 public:
-    bool makeTurn();
-    string guessWord();
-	void chooseWord(ifstream& fin);
-    char guessLetter();
-    char chooseCategory();
-    void openFile();
-    void updatePlayers(bool win, int winner);
-    void saveScores();
-	bool winGame();
-	void findLetterPos(char guessletter);
 	void addPlayer(player p);
 	player getPlayer(int pos);
 	player createPlayer();
+	char chooseCategory();
+	void openFile();
+	void chooseWord(ifstream& fin);
+	bool makeTurn();
+	bool winGame();
+	string guessWord();
+	char guessLetter();
+	void updatePlayers(bool win, int winner);
 	void play();
+	void saveScores();
     
 };
 
