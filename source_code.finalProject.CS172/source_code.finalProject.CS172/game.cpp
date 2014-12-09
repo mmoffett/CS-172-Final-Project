@@ -269,6 +269,7 @@ void game::play()
 			if (tries == 0)
 			{
 				updatePlayers(false, -1);//update with no winner
+				cout << "The correct word is: " << word<<endl;
 				return;
 			}
 		}
